@@ -2481,7 +2481,7 @@
 
     .compat-pill-icon{
       width:16px;
-      height:16px;
+      height:18px;
       flex:0 0 16px;
       color:#ce7e98;
       display:inline-flex;
@@ -2700,7 +2700,7 @@
       .metric-values{order:2;transform:none;}
       .metric-personality{order:3;transform:none;}
       .compat-mantra span{font-size:.68rem;padding:.36rem .64rem;}
-      .compat-pill-icon{width:15px;height:15px;flex-basis:15px;}
+      .compat-pill-icon{width:15px;height:24px;flex-basis:15px;}
     }
 
     @media (prefers-reduced-motion:reduce){
@@ -2786,12 +2786,12 @@
       
 
       <ul class="nav-links">
-        <li><a href="https://www.sparkedconnection.com/form">Network</a></li>
-        <li><a href="https://www.sparkedconnection.com/form">How It Works</a></li>
-        <li><a href="https://www.sparkedconnection.com/form">Our Approach</a></li>
-        <li><a href="https://www.sparkedconnection.com/form">Privacy</a></li>
-        <li><a href="https://www.sparkedconnection.com/form">FAQ</a></li>
-        <li><a href="https://www.sparkedconnection.com/form" class="nav-refer-link" rel="noopener noreferrer">Refer a Friend</a></li>
+        <li><a href="#network">Overview</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#ai-matching">AI &amp; Matching</a></li>
+        <li><a href="#privacy">Privacy</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="https://sparkedconnection.com/refer-a-friend" class="nav-refer-link" rel="noopener noreferrer">Refer a Friend</a></li>
       </ul>
 
       <div class="nav-actions">
@@ -2809,12 +2809,12 @@
 
   <!-- MOBILE MENU -->
   <div class="mobile-menu-panel" id="mobile-menu-panel">
-    <a class="mobile-menu-link" href="https://www.sparkedconnection.com/form">Network</a>
-    <a class="mobile-menu-link" href="https://www.sparkedconnection.com/form">How It Works</a>
-    <a class="mobile-menu-link" href="https://www.sparkedconnection.com/form">Our Approach</a>
-    <a class="mobile-menu-link" href="https://www.sparkedconnection.com/form">Privacy</a>
-    <a class="mobile-menu-link" href="https://www.sparkedconnection.com/form">FAQ</a>
-    <a class="mobile-menu-link" href="https://www.sparkedconnection.com/form">Refer a Friend</a>
+    <a class="mobile-menu-link" href="#network">Overview</a>
+    <a class="mobile-menu-link" href="#how-it-works">How It Works</a>
+    <a class="mobile-menu-link" href="#ai-matching">AI &amp; Matching</a>
+    <a class="mobile-menu-link" href="#privacy">Privacy</a>
+    <a class="mobile-menu-link" href="#faq">FAQ</a>
+    <a class="mobile-menu-link" href="https://sparkedconnection.com/refer-a-friend">Refer a Friend</a>
     <a href="https://www.sparkedconnection.com/form" class="btn-primary mobile-menu-cta" rel="noopener noreferrer" target="_blank">Join the Network</a>
   </div>
 
@@ -3109,12 +3109,12 @@
 #network .aurora-line{
   position:absolute;
   left:-15%;
-  top:22%;
+  top:42%;
   width:130%;
   height:26%;
   pointer-events:none;
   transform:rotate(-6deg);
-  filter:blur(7px);
+  filter:blur(9px);
   opacity:.72;
   animation:auroraBrokenDrift 16s ease-in-out infinite alternate;
 }
@@ -3122,7 +3122,7 @@
 #network .aurora-line span{
   position:absolute;
   display:block;
-  height:12px;
+  height:20px;
   border-radius:999px;
   background:linear-gradient(90deg,
     transparent 0%,
@@ -3159,7 +3159,7 @@
   width:19%;
   left:52%;
   top:48%;
-  height:10px;
+  height:16px;
   transform:rotate(7deg) skewX(-10deg);
   opacity:.55;
   animation-delay:-4s;
@@ -3169,7 +3169,7 @@
   width:27%;
   left:65%;
   top:30%;
-  height:13px;
+  height:21px;
   transform:rotate(-5deg) skewX(-16deg);
   opacity:.62;
   animation-delay:-1s;
@@ -3179,7 +3179,7 @@
   content:"";
   position:absolute;
   left:18%;
-  top:18%;
+  top:36%;
   width:72%;
   height:62%;
   background:
@@ -3241,6 +3241,101 @@
 }
 </style>
 
+
+<style>
+/* Mobile moon partnership badge fix */
+#network .partnership-mobile-wrap{
+  display:none;
+}
+
+@media(max-width:900px){
+  #network .partnership-mobile-wrap{
+    display:flex !important;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:4px;
+    text-decoration:none;
+    pointer-events:all;
+    margin:0.65rem 0 1.05rem;
+    position:relative;
+    z-index:35;
+  }
+
+  #network .partnership-mobile-tag{
+    font-family:'Josefin Sans',sans-serif;
+    font-size:7px;
+    font-weight:600;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:rgba(255,255,255,0.72);
+    text-align:center;
+    white-space:nowrap;
+    line-height:1;
+  }
+
+  #network .partnership-mobile-badge{
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    display:block;
+    object-fit:cover;
+    overflow:hidden;
+    box-shadow:none;
+    background:transparent;
+  }
+}
+</style>
+
+
+<style>
+/* Mobile aurora visibility fix */
+@media(max-width:900px){
+  #network .hero-aurora{
+    display:block !important;
+    opacity:1 !important;
+    visibility:visible !important;
+    z-index:6 !important;
+    mix-blend-mode:screen !important;
+  }
+
+  #network .aurora-line{
+    display:block !important;
+    top:46% !important;
+    left:-38% !important;
+    width:176% !important;
+    height:30% !important;
+    opacity:.95 !important;
+    filter:blur(7px) !important;
+    transform:rotate(-7deg) !important;
+  }
+
+  #network .aurora-line span{
+    display:block !important;
+    opacity:.9 !important;
+    min-height:20px !important;
+    box-shadow:
+      0 0 18px rgba(118,255,176,.48),
+      0 0 38px rgba(118,255,176,.28) !important;
+  }
+
+  #network .aurora-line span:nth-child(1){width:34% !important; left:0% !important;}
+  #network .aurora-line span:nth-child(2){width:42% !important; left:25% !important;}
+  #network .aurora-line span:nth-child(3){width:30% !important; left:57% !important;}
+  #network .aurora-line span:nth-child(4){width:36% !important; left:74% !important;}
+
+  #network .aurora-line::before{
+    display:block !important;
+    opacity:.7 !important;
+    top:36% !important;
+  }
+
+  #network .overlay{
+    z-index:10 !important;
+  }
+}
+</style>
+
 <section class="hero" id="network">
 <canvas id="network-hero-canvas" aria-hidden="true"></canvas>
 <div class="hero-aurora" aria-hidden="true">
@@ -3257,6 +3352,11 @@
 
 <div class="overlay">
   <div class="hero-badge"><span class="badge-dot"></span>Private · Members Only · UK-Wide</div>
+  <a href="https://www.sparkedconnection.com" class="partnership-mobile-wrap" target="_blank" rel="noopener noreferrer" aria-label="In Partnership with Sparked Connection">
+    <span class="partnership-mobile-tag">In Partnership with</span>
+    <img src="sparked-connection-moon.png" alt="Sparked Connection" class="partnership-mobile-badge">
+  </a>
+
 
   <div class="h1-wrap">
     <h1 class="hero-h1">
@@ -3270,7 +3370,7 @@
     </h1>
   </div>
 
-  <p class="hero-subtitle">A private, values-led community for ambitious professionals. Matched on what truly matters — personality, values, lifestyle, and shared passions — by certified human expertise and intelligent technology.</p>
+  <p class="hero-subtitle">A private, values-led community for ambitious professionals. Matched on what truly matters - personality, values, lifestyle, and shared passions - by certified human expertise and intelligent technology.</p>
 
   <div class="cta-group">
     <a href="https://www.sparkedconnection.com/form" class="btn-primary" target="_blank" rel="noopener noreferrer"><span>Apply to Join</span>&nbsp;<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
@@ -3285,7 +3385,7 @@
   </div>
 
   <div class="abia-wrap">
-    <img class="abia-logo" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%0A%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2248%22%20fill%3D%22%23c89b3c%22%20stroke%3D%22%23a57b26%22%20stroke-width%3D%222%22/%3E%0A%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2240%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%221.5%22%20stroke-dasharray%3D%224%202%22/%3E%0A%20%20%3Ctext%20x%3D%2250%22%20y%3D%2234%22%20font-family%3D%22Georgia%2C%20serif%22%20font-size%3D%2215%22%20font-weight%3D%22700%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3EABIA%3C/text%3E%0A%20%20%3Ctext%20x%3D%2250%22%20y%3D%2250%22%20font-family%3D%22Georgia%2C%20serif%22%20font-size%3D%227%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3EAssociation%20of%20British%3C/text%3E%0A%20%20%3Ctext%20x%3D%2250%22%20y%3D%2260%22%20font-family%3D%22Georgia%2C%20serif%22%20font-size%3D%227%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3EIntroduction%20Agencies%3C/text%3E%0A%20%20%3Ctext%20x%3D%2250%22%20y%3D%2277%22%20font-family%3D%22Georgia%2C%20serif%22%20font-size%3D%227%22%20fill%3D%22%23ffeaa5%22%20text-anchor%3D%22middle%22%3EApproved%20Services%3C/text%3E%0A%3C/svg%3E" / alt="ABIA Approved Member" >
+    <img class="abia-logo" src="abia-badge.svg" /  alt="ABIA Approved Services" >
     <div class="abia-text">We are ABIA approved &amp; registered</div>
   </div>
 </div>
@@ -3514,7 +3614,7 @@ Join, complete your profile, and be considered when a genuinely aligned connecti
     </div>
   </section>
 
-<section class="section-aihuman">
+<section class="section-aihuman" id="ai-matching">
     <div class="container">
       <div class="aihuman-grid">
 
@@ -3751,7 +3851,7 @@ Join, complete your profile, and be considered when a genuinely aligned connecti
             </div>
           </button>
           <div class="faq-answer">
-            <p>Simply click on  'Join the Network' or 'Apply to Join' to complete the profile questionnaire.</p>
+            <p>Simply create a free profile through our enquiry page. Every application is personally reviewed by Anna before membership is confirmed. This ensures the quality and intentionality of the network is maintained for every member.</p>
           </div>
         </div>
 
@@ -3916,13 +4016,13 @@ Join, complete your profile, and be considered when a genuinely aligned connecti
         </div>
 
         <div class="footer-col">
-          <h4>Network</h4>
+          <h4>Overview</h4>
           <ul>
-            <li><a href="https://www.sparkedconnection.com/form">Overview</a></li>
-            <li><a href="https://www.sparkedconnection.com/form">How It Works</a></li>
+            <li><a href="#network" >Overview</a></li>
+            <li><a href="#how-it-works" >How It Works</a></li>
             <li><a href="https://www.sparkedconnection.com/form">FAQ</a></li>
             <li><a href="https://www.sparkedconnection.com/form">Apply to Join</a></li>
-            <li><a href="/refer-a-friend">Refer a Friend</a></li>
+            <li><a href="https://sparkedconnection.com/refer-a-friend">Refer a Friend</a></li>
           </ul>
         </div>
 
