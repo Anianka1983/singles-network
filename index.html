@@ -2292,22 +2292,18 @@
     /* =============================================
        HERO PARTNERSHIP BADGE
     ============================================= */
-.hero-h1{
-  margin-bottom:50px;
-}
-
 .hero-h1-line1{
-  font-size:0.66em;
-  display:inline-block;
-  line-height:0.95;
+    font-size:0.76em;
+    display:inline-block;
+    line-height:0.95;
 }
 
 .hero-h1 em{
-  font-size:1.00em;
-  line-height:1.18;
-  display:inline-block;
-  padding-bottom:0.08em;
+    font-size:1.05em;
+    line-height:0.9;
+    display:inline-block;
 }
+
     .hero-partnership-wrap {
       position: absolute;
       top: calc(50% - 1cm);
@@ -2787,6 +2783,87 @@
   }
   </script>
 
+
+<style id="abia-visibility-fix">
+/* ABIA badge/text visibility fix */
+.abia-badge-hero{
+  margin-top:2.2rem !important;
+  margin-bottom:2.6rem !important;
+  padding-bottom:1.4rem !important;
+  overflow:visible !important;
+  position:relative !important;
+  z-index:30 !important;
+}
+
+.abia-logo{
+  width:clamp(105px, 9vw, 145px) !important;
+  height:auto !important;
+  margin:0 auto 0.7rem !important;
+  display:block !important;
+}
+
+.abia-text{
+  display:block !important;
+  visibility:visible !important;
+  opacity:1 !important;
+  position:relative !important;
+  z-index:35 !important;
+  margin-top:0.4rem !important;
+  padding-bottom:0.6rem !important;
+  color:rgba(255,255,255,0.98) !important;
+  font-size:0.72rem !important;
+  line-height:1.35 !important;
+  letter-spacing:0.08em !important;
+  text-align:center !important;
+  white-space:normal !important;
+}
+
+/* Make sure the hero doesn't crop the bottom of the ABIA line */
+.hero,
+.hero-content,
+.hero-inner{
+  overflow:visible !important;
+}
+
+@media(max-width:768px){
+  .abia-badge-hero{
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
+    justify-content:center !important;
+    margin-top:1.7rem !important;
+    margin-bottom:2.2rem !important;
+    padding-bottom:1.3rem !important;
+    width:100% !important;
+    overflow:visible !important;
+    z-index:40 !important;
+  }
+
+  .abia-logo{
+    display:block !important;
+    width:115px !important;
+    max-width:38vw !important;
+    height:auto !important;
+    margin:0 auto 0.7rem !important;
+  }
+
+  .abia-text{
+    display:block !important;
+    visibility:visible !important;
+    opacity:1 !important;
+    font-size:0.62rem !important;
+    line-height:1.35 !important;
+    letter-spacing:0.075em !important;
+    padding:0 1rem 0.7rem !important;
+    text-align:center !important;
+  }
+
+  .hero-content{
+    padding-bottom:4.5rem !important;
+  }
+}
+</style>
+
 </head>
 <body>
 
@@ -2841,13 +2918,7 @@
 @keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.65)}}
 .h1-wrap{position:relative;display:inline-block;margin-bottom:22px}
 .hero-h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2.6rem,5.5vw,5rem);font-weight:700;line-height:1.06;color:#fff;text-shadow:0 2px 40px rgba(0,0,0,.4)}
-
-.hero-h1 em
-{font-style:normal;
-background:linear-gradient(135deg,#ce7e98 0%,#e6a961 100%);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;background-clip:text}
-
+.hero-h1 em{font-style:normal;background:linear-gradient(135deg,#ce7e98 0%,#e6a961 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .partnership-wrap{position:absolute;top:-0.55em;right:-6.8rem;transform:translateY(0);display:flex;flex-direction:column;align-items:center;gap:3px;text-decoration:none;pointer-events:all;z-index:25}
 .partnership-tag{font-family:'Josefin Sans',sans-serif;font-size:7px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,0.9);text-shadow:0 0 8px rgba(255,230,160,0.7), 0 0 18px rgba(255,210,120,0.4);text-align:center;white-space:nowrap}
 .partnership-badge{width:68px;height:68px;border-radius:50%;display:block;object-fit:cover;box-shadow:0 6px 28px rgba(0,0,0,.30), 0 0 18px 4px rgba(255,240,200,0.35), 0 0 40px 10px rgba(255,220,150,0.18);transition:transform .3s ease,box-shadow .3s ease;background:transparent;overflow:hidden;animation:moonGlow 4s ease-in-out infinite}
