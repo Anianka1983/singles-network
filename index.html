@@ -440,13 +440,19 @@
       margin-bottom: 1.5rem;
     }
 
-    .hero h1 em {
-      font-style: normal;
-      background: linear-gradient(135deg, #ce7e98 0%, #e6a961 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+   .hero h1 em {
+  font-style: normal;
+  background: linear-gradient(135deg, #ce7e98 0%, #e6a961 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  filter:
+    drop-shadow(0 0 8px rgba(230,169,97,0.18))
+    drop-shadow(0 0 18px rgba(206,126,152,0.12));
+
+  animation: singlesGlow 4s ease-in-out infinite;
+}
 
     .hero-subtitle {
       font-size: clamp(1rem, 2vw, 1.2rem);
@@ -1752,6 +1758,20 @@
       animation: fade-in-up 0.65s ease-out both;
     }
 
+@keyframes singlesGlow {
+  0%,100% {
+    filter:
+      drop-shadow(0 0 8px rgba(230,169,97,0.18))
+      drop-shadow(0 0 18px rgba(206,126,152,0.12));
+  }
+
+  50% {
+    filter:
+      drop-shadow(0 0 12px rgba(230,169,97,0.30))
+      drop-shadow(0 0 26px rgba(206,126,152,0.22));
+  }
+}
+
     /* =============================================
        RESPONSIVE
     ============================================= */
@@ -2292,11 +2312,17 @@
     /* =============================================
        HERO PARTNERSHIP BADGE
     ============================================= */
-    .hero-h1-line1 {
-      position: relative;
-      display: inline-block;
-      white-space: nowrap;
-    }
+.hero-h1-line1{
+    font-size:0.78em;
+    display:inline-block;
+    line-height:0.95;
+}
+
+.hero-h1 em{
+    font-size:1.22em;
+    line-height:0.9;
+    display:inline-block;
+}
 
     .hero-partnership-wrap {
       position: absolute;
