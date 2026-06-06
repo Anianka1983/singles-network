@@ -440,19 +440,13 @@
       margin-bottom: 1.5rem;
     }
 
-   .hero h1 em {
-  font-style: normal;
-  background: linear-gradient(135deg, #ce7e98 0%, #e6a961 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-
-filter:
-  drop-shadow(0 0 10px rgba(230,169,97,0.22))
-  drop-shadow(0 0 22px rgba(206,126,152,0.16));
-
-  animation: singlesGlow 4s ease-in-out infinite;
-}
+    .hero h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, #ce7e98 0%, #e6a961 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
 
     .hero-subtitle {
       font-size: clamp(1rem, 2vw, 1.2rem);
@@ -1758,20 +1752,6 @@ filter:
       animation: fade-in-up 0.65s ease-out both;
     }
 
-@keyframes singlesGlow {
-  0%,100% {
-    filter:
-      drop-shadow(0 0 8px rgba(230,169,97,0.18))
-      drop-shadow(0 0 18px rgba(206,126,152,0.12));
-  }
-
-  50% {
-    filter:
-      drop-shadow(0 0 12px rgba(230,169,97,0.30))
-      drop-shadow(0 0 26px rgba(206,126,152,0.22));
-  }
-}
-
     /* =============================================
        RESPONSIVE
     ============================================= */
@@ -2312,8 +2292,8 @@ filter:
     /* =============================================
        HERO PARTNERSHIP BADGE
     ============================================= */
-.hero-h1-line1{
-    font-size:0.78em;
+ .hero-h1-line1{
+    font-size:0.70em;
     display:inline-block;
     line-height:0.95;
 }
@@ -2857,7 +2837,13 @@ filter:
 @keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.65)}}
 .h1-wrap{position:relative;display:inline-block;margin-bottom:22px}
 .hero-h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2.6rem,5.5vw,5rem);font-weight:700;line-height:1.06;color:#fff;text-shadow:0 2px 40px rgba(0,0,0,.4)}
-.hero-h1 em{font-style:normal;background:linear-gradient(135deg,#ce7e98 0%,#e6a961 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+.hero-h1 em
+{font-style:normal;
+background:linear-gradient(135deg,#ce7e98 0%,#e6a961 100%);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;background-clip:text}
+
 .partnership-wrap{position:absolute;top:-0.55em;right:-6.8rem;transform:translateY(0);display:flex;flex-direction:column;align-items:center;gap:3px;text-decoration:none;pointer-events:all;z-index:25}
 .partnership-tag{font-family:'Josefin Sans',sans-serif;font-size:7px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,0.9);text-shadow:0 0 8px rgba(255,230,160,0.7), 0 0 18px rgba(255,210,120,0.4);text-align:center;white-space:nowrap}
 .partnership-badge{width:68px;height:68px;border-radius:50%;display:block;object-fit:cover;box-shadow:0 6px 28px rgba(0,0,0,.30), 0 0 18px 4px rgba(255,240,200,0.35), 0 0 40px 10px rgba(255,220,150,0.18);transition:transform .3s ease,box-shadow .3s ease;background:transparent;overflow:hidden;animation:moonGlow 4s ease-in-out infinite}
