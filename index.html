@@ -3085,8 +3085,176 @@
 }
 </style>
 
+
+
+
+
+
+<style>
+/* Slim broken moving aurora line across the hero sky */
+#network{
+  position:relative !important;
+}
+
+#network .hero-aurora{
+  position:absolute;
+  inset:0;
+  z-index:4;
+  pointer-events:none;
+  overflow:hidden;
+  opacity:.92;
+  mix-blend-mode:screen;
+}
+
+#network .aurora-line{
+  position:absolute;
+  left:-15%;
+  top:22%;
+  width:130%;
+  height:26%;
+  pointer-events:none;
+  transform:rotate(-6deg);
+  filter:blur(7px);
+  opacity:.72;
+  animation:auroraBrokenDrift 16s ease-in-out infinite alternate;
+}
+
+#network .aurora-line span{
+  position:absolute;
+  display:block;
+  height:12px;
+  border-radius:999px;
+  background:linear-gradient(90deg,
+    transparent 0%,
+    rgba(96,255,168,.16) 10%,
+    rgba(122,255,176,.68) 42%,
+    rgba(207,255,184,.52) 68%,
+    transparent 100%);
+  box-shadow:
+    0 0 14px rgba(118,255,176,.34),
+    0 0 30px rgba(118,255,176,.16);
+  opacity:.82;
+  animation:auroraSegmentPulse 7s ease-in-out infinite alternate;
+}
+
+#network .aurora-line span:nth-child(1){
+  width:25%;
+  left:5%;
+  top:42%;
+  transform:rotate(5deg) skewX(-14deg);
+  opacity:.48;
+}
+
+#network .aurora-line span:nth-child(2){
+  width:34%;
+  left:25%;
+  top:34%;
+  height:15px;
+  transform:rotate(-4deg) skewX(-18deg);
+  opacity:.78;
+  animation-delay:-2s;
+}
+
+#network .aurora-line span:nth-child(3){
+  width:19%;
+  left:52%;
+  top:48%;
+  height:10px;
+  transform:rotate(7deg) skewX(-10deg);
+  opacity:.55;
+  animation-delay:-4s;
+}
+
+#network .aurora-line span:nth-child(4){
+  width:27%;
+  left:65%;
+  top:30%;
+  height:13px;
+  transform:rotate(-5deg) skewX(-16deg);
+  opacity:.62;
+  animation-delay:-1s;
+}
+
+#network .aurora-line::before{
+  content:"";
+  position:absolute;
+  left:18%;
+  top:18%;
+  width:72%;
+  height:62%;
+  background:
+    radial-gradient(ellipse at 22% 60%, rgba(92,255,170,.16) 0%, transparent 32%),
+    radial-gradient(ellipse at 45% 38%, rgba(130,255,185,.22) 0%, transparent 28%),
+    radial-gradient(ellipse at 72% 54%, rgba(112,255,176,.13) 0%, transparent 34%);
+  filter:blur(22px);
+  opacity:.55;
+  animation:auroraMistMove 12s ease-in-out infinite alternate;
+}
+
+@keyframes auroraBrokenDrift{
+  0%{
+    transform:translateX(-5%) translateY(6px) rotate(-7deg);
+    opacity:.55;
+  }
+  45%{
+    transform:translateX(1%) translateY(-8px) rotate(-4deg);
+    opacity:.86;
+  }
+  100%{
+    transform:translateX(7%) translateY(4px) rotate(-2deg);
+    opacity:.64;
+  }
+}
+
+@keyframes auroraSegmentPulse{
+  0%{
+    opacity:.36;
+    filter:blur(7px);
+  }
+  50%{
+    opacity:.90;
+    filter:blur(5px);
+  }
+  100%{
+    opacity:.52;
+    filter:blur(8px);
+  }
+}
+
+@keyframes auroraMistMove{
+  0%{transform:translateX(-4%) translateY(6px); opacity:.28;}
+  50%{transform:translateX(3%) translateY(-6px); opacity:.50;}
+  100%{transform:translateX(8%) translateY(4px); opacity:.34;}
+}
+
+/* keep all banner content above aurora */
+#network .overlay{
+  z-index:10 !important;
+}
+
+@media (prefers-reduced-motion:reduce){
+  #network .aurora-line,
+  #network .aurora-line span,
+  #network .aurora-line::before{
+    animation:none!important;
+  }
+}
+</style>
+
 <section class="hero" id="network">
 <canvas id="network-hero-canvas" aria-hidden="true"></canvas>
+<div class="hero-aurora" aria-hidden="true">
+  <div class="aurora-line">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+
+
+
 <div class="overlay">
   <div class="hero-badge"><span class="badge-dot"></span>Private · Members Only · UK-Wide</div>
 
@@ -3117,7 +3285,7 @@
   </div>
 
   <div class="abia-wrap">
-    <img class="abia-logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0OCIgZmlsbD0iI2M4OWIzYyIgc3Ryb2tlPSIjYTU3YjI2IiBzdHJva2Utd2lkdGg9IjIiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWRhc2hhcnJheT0iNCwyIi8+PHRleHQgeD0iNTAiIHk9IjM2IiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSIxNiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+QUJJQTX0ZXh0Pjx0ZXh0IHg9IjUwIiB5PSI1MyIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iNy41IiBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5Bc3NvY2lhdGlvbiBvZiBCcml0aXNoPC90ZXh0Pjx0ZXh0IHg9IjUwIiB5PSI2MyIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iNy41IiBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5JbnRyb2R1Y3Rpb24gQWdlbmNpZXM8L3RleHQ+PHRleHQgeD0iNTAiIHk9Ijc4IiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSI3IiBmaWxsPSIjZmZlYWE1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5BcHByb3ZlZCBTZXJ2aWNlczwvdGV4dD48L3N2Zz4=" alt="ABIA Approved Member" />
+    <img class="abia-logo" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%0A%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2248%22%20fill%3D%22%23c89b3c%22%20stroke%3D%22%23a57b26%22%20stroke-width%3D%222%22/%3E%0A%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2240%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%221.5%22%20stroke-dasharray%3D%224%202%22/%3E%0A%20%20%3Ctext%20x%3D%2250%22%20y%3D%2234%22%20font-family%3D%22Georgia%2C%20serif%22%20font-size%3D%2215%22%20font-weight%3D%22700%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3EABIA%3C/text%3E%0A%20%20%3Ctext%20x%3D%2250%22%20y%3D%2250%22%20font-family%3D%22Georgia%2C%20serif%22%20font-size%3D%227%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3EAssociation%20of%20British%3C/text%3E%0A%20%20%3Ctext%20x%3D%2250%22%20y%3D%2260%22%20font-family%3D%22Georgia%2C%20serif%22%20font-size%3D%227%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3EIntroduction%20Agencies%3C/text%3E%0A%20%20%3Ctext%20x%3D%2250%22%20y%3D%2277%22%20font-family%3D%22Georgia%2C%20serif%22%20font-size%3D%227%22%20fill%3D%22%23ffeaa5%22%20text-anchor%3D%22middle%22%3EApproved%20Services%3C/text%3E%0A%3C/svg%3E" / alt="ABIA Approved Member" >
     <div class="abia-text">We are ABIA approved &amp; registered</div>
   </div>
 </div>
@@ -3583,7 +3751,7 @@ Join, complete your profile, and be considered when a genuinely aligned connecti
             </div>
           </button>
           <div class="faq-answer">
-            <p>Simply create a free profile through our enquiry page. Every application is personally reviewed by Anna before membership is confirmed. This ensures the quality and intentionality of the network is maintained for every member.</p>
+            <p>Simply click on  'Join the Network' or 'Apply to Join' to complete the profile questionnaire.</p>
           </div>
         </div>
 
