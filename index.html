@@ -3061,6 +3061,69 @@
 }
 </style>
 
+
+<style id="singles-network-brighter-sparks">
+/* Brighter Singles Network text with very subtle elegant sparks */
+#network .hero-h1 em,
+#network .hero h1 em,
+.hero-h1 em{
+  position:relative !important;
+  display:inline-block !important;
+  background:linear-gradient(135deg, #ffd1da 0%, #f7a06d 36%, #f6c85f 70%, #fff2b8 100%) !important;
+  -webkit-background-clip:text !important;
+  -webkit-text-fill-color:transparent !important;
+  background-clip:text !important;
+  filter:
+    drop-shadow(0 0 8px rgba(255,216,122,0.22))
+    drop-shadow(0 0 18px rgba(244,160,176,0.14)) !important;
+  animation:singlesSoftGlow 4.8s ease-in-out infinite !important;
+}
+
+#network .hero-h1 em::before,
+#network .hero h1 em::before,
+.hero-h1 em::before{
+  content:"";
+  position:absolute;
+  inset:-0.16em -0.08em -0.12em -0.08em;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 18% 35%, rgba(255,239,177,0.95) 0 1.4px, transparent 2.4px),
+    radial-gradient(circle at 41% 18%, rgba(255,210,135,0.72) 0 1px, transparent 2.2px),
+    radial-gradient(circle at 67% 58%, rgba(255,238,184,0.82) 0 1.2px, transparent 2.4px),
+    radial-gradient(circle at 88% 28%, rgba(244,160,176,0.55) 0 1px, transparent 2.2px);
+  opacity:0.22;
+  mix-blend-mode:screen;
+  animation:singlesTinySparks 5.8s ease-in-out infinite;
+}
+
+@keyframes singlesSoftGlow{
+  0%,100%{
+    filter:
+      drop-shadow(0 0 8px rgba(255,216,122,0.20))
+      drop-shadow(0 0 18px rgba(244,160,176,0.12));
+  }
+  50%{
+    filter:
+      drop-shadow(0 0 12px rgba(255,216,122,0.34))
+      drop-shadow(0 0 25px rgba(244,160,176,0.18));
+  }
+}
+
+@keyframes singlesTinySparks{
+  0%,100%{opacity:0.14; transform:translateY(0) scale(1);}
+  45%{opacity:0.34; transform:translateY(-2px) scale(1.01);}
+  70%{opacity:0.20; transform:translateY(1px) scale(0.995);}
+}
+
+@media(max-width:700px){
+  #network .hero-h1 em::before,
+  #network .hero h1 em::before,
+  .hero-h1 em::before{
+    opacity:0.18;
+  }
+}
+</style>
+
 </head>
 <body>
 
