@@ -37,14 +37,87 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F8G4QMSHJN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-F8G4QMSHJN');
-  </script>
+  <!-- Google tag (gtag.js) — now consent-gated. See the cookie banner script placed just after the opening body tag. -->
+  <!-- GA4 will not load until the visitor clicks "Accept" on the cookie banner -->
+
+  <style>
+    #sc-cookie-banner {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      z-index: 9999;
+      background: hsl(var(--background));
+      border-top: 1px solid hsl(var(--border));
+      box-shadow: 0 -4px 20px hsl(220 30% 20% / .10);
+      padding: 1.25rem 1.5rem;
+      font-family: 'Inter', -apple-system, sans-serif;
+      display: none;
+    }
+    #sc-cookie-banner.sc-visible { display: block; }
+    .sc-cookie-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .sc-cookie-text {
+      flex: 1 1 380px;
+      color: hsl(var(--foreground));
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .sc-cookie-text a {
+      color: hsl(var(--accent));
+      text-decoration: underline;
+    }
+    .sc-cookie-actions {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .sc-btn {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 0.65rem 1.4rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .sc-btn-reject {
+      background: transparent;
+      border-color: hsl(var(--primary));
+      color: hsl(var(--primary));
+    }
+    .sc-btn-reject:hover { background: hsl(var(--primary) / .06); }
+    .sc-btn-accept {
+      background: hsl(var(--accent));
+      color: hsl(var(--primary-foreground));
+    }
+    .sc-btn-accept:hover { background: hsl(var(--accent-gold)); }
+    #sc-cookie-manage-link {
+      position: fixed;
+      left: 1rem; bottom: 1rem;
+      z-index: 9998;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      color: hsl(var(--muted-foreground));
+      text-decoration: underline;
+      cursor: pointer;
+      background: none;
+      border: none;
+      display: none;
+    }
+    #sc-cookie-manage-link.sc-visible { display: block; }
+    @media (max-width: 640px) {
+      .sc-cookie-actions { width: 100%; justify-content: stretch; }
+      .sc-btn { flex: 1; text-align: center; }
+    }
+  </style>
 
   <script type="application/ld+json">
   {
@@ -2955,6 +3028,87 @@
 
 </head>
 <body>
+
+<div id="sc-cookie-banner" role="dialog" aria-label="Cookie preferences">
+  <div class="sc-cookie-inner">
+    <p class="sc-cookie-text">
+      We use analytics cookies to understand how visitors use this site and improve your experience.
+      No cookies are set until you choose. See our <a href="https://sparkedconnection.com/privacy-notice">Privacy Notice</a> for details.
+    </p>
+    <div class="sc-cookie-actions">
+      <button type="button" class="sc-btn sc-btn-reject" id="sc-cookie-reject">Reject</button>
+      <button type="button" class="sc-btn sc-btn-accept" id="sc-cookie-accept">Accept</button>
+    </div>
+  </div>
+</div>
+<button type="button" id="sc-cookie-manage-link">Cookie preferences</button>
+
+<script>
+(function () {
+  var GA_ID = 'G-F8G4QMSHJN';
+  var STORAGE_KEY = 'sc_cookie_consent';
+
+  function loadGA() {
+    if (window.__scGALoaded) return;
+    window.__scGALoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', GA_ID, { anonymize_ip: true });
+  }
+
+  function getConsent() {
+    try { return localStorage.getItem(STORAGE_KEY); } catch (e) { return null; }
+  }
+  function setConsent(value) {
+    try { localStorage.setItem(STORAGE_KEY, value); } catch (e) {}
+  }
+  function showBanner() {
+    document.getElementById('sc-cookie-banner').classList.add('sc-visible');
+  }
+  function hideBanner() {
+    document.getElementById('sc-cookie-banner').classList.remove('sc-visible');
+  }
+  function showManageLink() {
+    document.getElementById('sc-cookie-manage-link').classList.add('sc-visible');
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var consent = getConsent();
+
+    if (consent === 'accepted') {
+      loadGA();
+      showManageLink();
+    } else if (consent === 'rejected') {
+      showManageLink();
+    } else {
+      showBanner();
+    }
+
+    document.getElementById('sc-cookie-accept').addEventListener('click', function () {
+      setConsent('accepted');
+      loadGA();
+      hideBanner();
+      showManageLink();
+    });
+
+    document.getElementById('sc-cookie-reject').addEventListener('click', function () {
+      setConsent('rejected');
+      hideBanner();
+      showManageLink();
+    });
+
+    document.getElementById('sc-cookie-manage-link').addEventListener('click', function () {
+      showBanner();
+    });
+  });
+})();
+</script>
 
   <!-- NAVIGATION -->
   <nav class="nav" id="main-nav">
