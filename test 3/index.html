@@ -287,10 +287,7 @@
   .fmm-panel-events{ --panel-color:#2f8f7a; }
   .fmm-panel-photo{
     position:relative; height:150px; width:100%; background-size:cover; background-position:center;
-  }
-  .fmm-panel-photo::after{
-    content:""; position:absolute; inset:0;
-    background:linear-gradient(180deg, rgba(19,31,51,.48), rgba(19,31,51,.58));
+    filter:grayscale(1) contrast(1.05);
   }
   .fmm-panel-photo-placeholder{
     height:150px; width:100%; display:flex; align-items:center; justify-content:center;
