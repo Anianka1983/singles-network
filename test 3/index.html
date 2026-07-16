@@ -411,7 +411,7 @@
     border-bottom:1px solid #e6ded4; align-items:start;
   }
   .inside-row .n{font-family:'Cormorant Garamond'; font-size:1.3rem; color:var(--gold); font-style:italic;}
-  .inside-row h4{font-family:'Cormorant Garamond'; font-size:1.25rem; font-weight:600;}
+  .inside-row h4{font-family:'Cormorant Garamond'; font-size:1.25rem; font-weight:700;}
   .inside-row .tag{
     display:inline-block; background:#F3E7DC; color:var(--navy); font-family:'Josefin Sans';
     font-size:.62rem; letter-spacing:.08em; text-transform:uppercase; padding:3px 9px; border-radius:12px; margin-top:6px;
@@ -526,9 +526,125 @@
     .inside-row{grid-template-columns:1fr; gap:6px;}
     .hero h1{font-size:2.4rem;}
   }
+
+  /* COOKIE BANNER — matching sparkedconnection.com's implementation */
+  #sc-cookie-banner{
+    position:fixed; left:0; right:0; bottom:0; z-index:9999;
+    background:var(--cream); border-top:1px solid #ece2d6;
+    box-shadow:0 -4px 20px rgba(30,49,81,.10);
+    padding:1.25rem 1.5rem; font-family:'Inter', sans-serif; display:none;
+  }
+  #sc-cookie-banner.sc-visible{ display:block; }
+  .sc-cookie-inner{
+    max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap;
+    align-items:center; justify-content:space-between; gap:1rem;
+  }
+  .sc-cookie-text{ flex:1 1 380px; color:var(--navy); font-size:.9rem; line-height:1.6; }
+  .sc-cookie-text a{ color:var(--rose); text-decoration:underline; }
+  .sc-cookie-actions{ display:flex; gap:.75rem; flex-wrap:wrap; }
+  .sc-btn{
+    font-family:'Inter', sans-serif; font-size:.85rem; font-weight:500;
+    padding:.65rem 1.4rem; border-radius:9999px; cursor:pointer;
+    border:1px solid transparent; transition:all .2s; white-space:nowrap;
+  }
+  .sc-btn-reject{ background:transparent; border-color:var(--navy); color:var(--navy); }
+  .sc-btn-reject:hover{ background:rgba(30,49,81,.06); }
+  .sc-btn-accept{ background:var(--rose); color:#fff; }
+  .sc-btn-accept:hover{ background:var(--gold); }
+  #sc-cookie-manage-link{
+    position:fixed; left:1rem; bottom:1rem; z-index:9998;
+    font-family:'Inter', sans-serif; font-size:.75rem; color:#8a8074;
+    text-decoration:underline; cursor:pointer; background:none; border:none; display:none;
+  }
+  #sc-cookie-manage-link.sc-visible{ display:block; }
+  @media(max-width:640px){
+    .sc-cookie-actions{ width:100%; justify-content:stretch; }
+    .sc-btn{ flex:1; text-align:center; }
+  }
 </style>
 </head>
 <body>
+
+<div id="sc-cookie-banner" role="dialog" aria-label="Cookie preferences">
+  <div class="sc-cookie-inner">
+    <p class="sc-cookie-text">
+      We use analytics cookies to understand how visitors use this site and improve your experience.
+      No cookies are set until you choose. See our <a href="https://sparkedconnection.com/privacy-notice">Privacy Notice</a> for details.
+    </p>
+    <div class="sc-cookie-actions">
+      <button type="button" class="sc-btn sc-btn-reject" id="sc-cookie-reject">Reject</button>
+      <button type="button" class="sc-btn sc-btn-accept" id="sc-cookie-accept">Accept</button>
+    </div>
+  </div>
+</div>
+<button type="button" id="sc-cookie-manage-link">Cookie preferences</button>
+
+<script>
+(function () {
+  var GA_ID = 'G-F8G4QMSHJN';
+  var STORAGE_KEY = 'sc_cookie_consent';
+
+  function loadGA() {
+    if (window.__scGALoaded) return;
+    window.__scGALoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', GA_ID, { anonymize_ip: true });
+  }
+
+  function getConsent() {
+    try { return localStorage.getItem(STORAGE_KEY); } catch (e) { return null; }
+  }
+  function setConsent(value) {
+    try { localStorage.setItem(STORAGE_KEY, value); } catch (e) {}
+  }
+  function showBanner() {
+    document.getElementById('sc-cookie-banner').classList.add('sc-visible');
+  }
+  function hideBanner() {
+    document.getElementById('sc-cookie-banner').classList.remove('sc-visible');
+  }
+  function showManageLink() {
+    document.getElementById('sc-cookie-manage-link').classList.add('sc-visible');
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var consent = getConsent();
+
+    if (consent === 'accepted') {
+      loadGA();
+      showManageLink();
+    } else if (consent === 'rejected') {
+      showManageLink();
+    } else {
+      showBanner();
+    }
+
+    document.getElementById('sc-cookie-accept').addEventListener('click', function () {
+      setConsent('accepted');
+      loadGA();
+      hideBanner();
+      showManageLink();
+    });
+
+    document.getElementById('sc-cookie-reject').addEventListener('click', function () {
+      setConsent('rejected');
+      hideBanner();
+      showManageLink();
+    });
+
+    document.getElementById('sc-cookie-manage-link').addEventListener('click', function () {
+      showBanner();
+    });
+  });
+})();
+</script>
 
 <nav id="main-nav">
   <ul class="navlinks">
