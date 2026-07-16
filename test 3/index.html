@@ -557,13 +557,18 @@
   .sc-btn-accept:hover{ background:var(--gold); }
   #sc-cookie-manage-link{
     position:fixed; left:1rem; bottom:1rem; z-index:9998;
-    font-family:'Inter', sans-serif; font-size:.75rem; color:#8a8074;
-    text-decoration:underline; cursor:pointer; background:none; border:none; display:none;
+    width:38px; height:38px; border-radius:50%;
+    background:var(--navy); color:#fff; font-size:1rem;
+    display:none; align-items:center; justify-content:center;
+    cursor:pointer; border:none; box-shadow:0 4px 14px rgba(30,49,81,.3);
+    transition:transform .2s ease;
   }
-  #sc-cookie-manage-link.sc-visible{ display:block; }
+  #sc-cookie-manage-link.sc-visible{ display:flex; }
+  #sc-cookie-manage-link:hover{ transform:scale(1.08); }
   @media(max-width:640px){
     .sc-cookie-actions{ width:100%; justify-content:stretch; }
     .sc-btn{ flex:1; text-align:center; }
+    #sc-cookie-manage-link{ width:34px; height:34px; left:.75rem; bottom:.75rem; font-size:.9rem; }
   }
 </style>
 </head>
@@ -581,7 +586,7 @@
     </div>
   </div>
 </div>
-<button type="button" id="sc-cookie-manage-link">Cookie preferences</button>
+<button type="button" id="sc-cookie-manage-link" aria-label="Cookie preferences" title="Cookie preferences">🍪</button>
 
 <script>
 (function () {
