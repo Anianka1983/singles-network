@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Accessibility Statement | The Professional Singles Network</title>
+<link rel="icon" href="/sn-favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/sn-favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/sn-favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/sn-favicon-192.png">
+<link rel="apple-touch-icon" href="/sn-apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Accessibility statement for the Professional Singles Network website and events.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.singles-network.com/accessibility">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Inter:wght@400;500;600&family=Josefin+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1E3151;
+    --rose:#CE7E98;
+    --gold:#E6A961;
+    --plum:#b2345e;
+    --cream:#FDF9F5;
+    --navy-deep:#131F33;
+    --ink:#3A4256;
+  }
+  html{ scroll-behavior:smooth; }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  section{ scroll-margin-top:24px; }
+  body{
+    font-family:'Inter', sans-serif;
+    background:var(--cream);
+    color:var(--navy);
+    line-height:1.6;
+  }
+  .display{font-family:'Cormorant Garamond', serif;}
+  .label{font-family:'Josefin Sans', sans-serif; letter-spacing:.14em; text-transform:uppercase; font-size:.72rem;}
+
+  /* NAV */
+  nav{
+    display:grid; grid-template-columns:1fr auto 1fr; align-items:center;
+    padding:22px 48px; background:var(--cream); border-bottom:1px solid #ece2d6;
+    position:relative; z-index:100;
+  }
+  .logo{font-family:'Cormorant Garamond', serif; font-size:1.4rem; color:var(--navy); font-style:italic;}
+  .logo span{
+    background:linear-gradient(135deg, var(--rose), var(--gold));
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+  }
+  .navlinks{display:flex; gap:34px; list-style:none; grid-column:2; justify-content:center;}
+  .navlinks a{color:var(--navy); text-decoration:none; font-size:.85rem; font-family:'Inter'; font-weight:500;}
+  .navlinks a:hover{ color:var(--rose); }
+  .nav-actions{ display:flex; align-items:center; gap:14px; grid-column:3; justify-self:end; }
+  .join-btn{
+    display:inline-block; background:var(--plum); color:#fff; border:none; padding:11px 22px;
+    border-radius:30px; font-size:.85rem; font-family:'Inter'; font-weight:600; cursor:pointer;
+    box-shadow:0 4px 6px rgba(178,52,94,.25), 0 2px 3px rgba(178,52,94,.15);
+    transition:all .3s ease; text-decoration:none;
+  }
+  .join-btn:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(178,52,94,.35); }
+
+  /* MOBILE MENU TOGGLE */
+  .nav-mobile-toggle{
+    display:none; flex-direction:column; justify-content:center; gap:5px;
+    width:38px; height:38px; background:none; border:none; cursor:pointer; padding:0;
+  }
+  .nav-mobile-toggle span{
+    display:block; width:100%; height:2px; background:var(--navy); border-radius:2px;
+    transition:transform .25s ease, opacity .25s ease;
+  }
+  .nav-mobile-toggle.open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+  .nav-mobile-toggle.open span:nth-child(2){ opacity:0; }
+  .nav-mobile-toggle.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu-panel{
+    display:none; position:absolute; top:100%; left:0; right:0;
+    background:var(--cream); border-bottom:1px solid #ece2d6;
+    box-shadow:0 12px 24px rgba(30,49,81,.1);
+    padding:8px 24px 20px; z-index:99;
+  }
+  .mobile-menu-panel.open{ display:block; }
+  .mobile-menu-panel a{
+    display:block; padding:12px 4px; color:var(--navy); text-decoration:none;
+    font-family:'Inter'; font-size:.95rem; border-bottom:1px solid #ece2d6;
+  }
+  .mobile-menu-panel a:last-of-type{ border-bottom:none; }
+  .mobile-menu-cta{
+    margin-top:14px; text-align:center; padding:12px !important; border:none !important;
+    background:var(--plum); color:#fff !important; border-radius:30px; font-weight:600;
+  }
+  footer{
+    background:var(--navy-deep); padding:56px 48px 30px;
+  }
+  .footer-inner{
+    display:grid; grid-template-columns:2fr 1fr 1fr; gap:48px;
+    max-width:1100px; margin:0 auto; padding-bottom:40px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .footer-brand h3{
+    font-family:'Cormorant Garamond', serif; font-size:1.3rem; font-weight:700; color:#fff; margin-bottom:10px;
+  }
+  .footer-brand h3 span{
+    background:linear-gradient(135deg, var(--rose), var(--gold));
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+  }
+  .footer-logo{ height:74px; width:auto; display:block; margin-bottom:14px; }
+  .footer-brand p{ font-size:.85rem; color:rgba(255,255,255,.5); line-height:1.7; max-width:300px; }
+  .footer-col h4{
+    font-family:'Josefin Sans'; font-size:.68rem; font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:rgba(255,255,255,.5); margin-bottom:16px;
+  }
+  .footer-col ul{ list-style:none; display:flex; flex-direction:column; gap:9px; }
+  .footer-col a{ font-size:.85rem; color:rgba(255,255,255,.65); text-decoration:none; transition:color .2s; }
+  .footer-col a:hover{ color:var(--gold); }
+  .footer-bottom{
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;
+    max-width:1100px; margin:0 auto; padding-top:26px;
+  }
+  .footer-bottom p{ font-size:.76rem; color:rgba(255,255,255,.35); }
+  @media(max-width:760px){
+    .footer-inner{ grid-template-columns:1fr; gap:32px; }
+    .footer-bottom{ flex-direction:column; text-align:center; }
+  }
+  /* COOKIE BANNER — matching sparkedconnection.com's implementation */
+  #sc-cookie-banner{
+    position:fixed; left:0; right:0; bottom:0; z-index:9999;
+    background:var(--cream); border-top:1px solid #ece2d6;
+    box-shadow:0 -4px 20px rgba(30,49,81,.10);
+    padding:1.25rem 1.5rem; font-family:'Inter', sans-serif; display:none;
+  }
+  #sc-cookie-banner.sc-visible{ display:block; }
+  .sc-cookie-inner{
+    max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap;
+    align-items:center; justify-content:space-between; gap:1rem;
+  }
+  .sc-cookie-text{ flex:1 1 380px; color:var(--navy); font-size:.9rem; line-height:1.6; }
+  .sc-cookie-text a{ color:var(--rose); text-decoration:underline; }
+  .sc-cookie-actions{ display:flex; gap:.75rem; flex-wrap:wrap; }
+  .sc-btn{
+    font-family:'Inter', sans-serif; font-size:.85rem; font-weight:500;
+    padding:.65rem 1.4rem; border-radius:9999px; cursor:pointer;
+    border:1px solid transparent; transition:all .2s; white-space:nowrap;
+  }
+  .sc-btn-reject{ background:transparent; border-color:var(--navy); color:var(--navy); }
+  .sc-btn-reject:hover{ background:rgba(30,49,81,.06); }
+  .sc-btn-accept{ background:var(--rose); color:#fff; }
+  .sc-btn-accept:hover{ background:var(--gold); }
+  #sc-cookie-manage-link{
+    position:fixed; left:1rem; bottom:1rem; z-index:9998;
+    width:38px; height:38px; border-radius:50%;
+    background:var(--navy); color:#fff; font-size:1rem;
+    display:none; align-items:center; justify-content:center;
+    cursor:pointer; border:none; box-shadow:0 4px 14px rgba(30,49,81,.3);
+    transition:transform .2s ease;
+  }
+  #sc-cookie-manage-link.sc-visible{ display:flex; }
+  #sc-cookie-manage-link:hover{ transform:scale(1.08); }
+  @media(max-width:640px){
+    .sc-cookie-actions{ width:100%; justify-content:stretch; }
+    .sc-btn{ flex:1; text-align:center; }
+    #sc-cookie-manage-link{ width:34px; height:34px; left:.75rem; bottom:.75rem; font-size:.9rem; }
+  }
+  nav{ grid-template-columns:auto 1fr; }
+  .logo{ text-decoration:none; }
+  .nav-actions{ grid-column:2; }
+  .legal-hero{ background:var(--navy-deep); color:#fff; text-align:center; padding:64px 24px 56px; }
+  .legal-hero .label{ color:var(--gold); margin-bottom:12px; }
+  .legal-hero h1{ font-family:'Cormorant Garamond',serif; font-weight:500; font-size:2.6rem; margin-bottom:10px; }
+  .legal-hero p{ color:rgba(255,255,255,.65); font-size:.9rem; }
+  .legal{ max-width:800px; margin:0 auto; padding:56px 24px 80px; }
+  .legal h2{ font-family:'Cormorant Garamond',serif; font-size:1.7rem; font-weight:600; color:var(--navy); margin:40px 0 12px; }
+  .legal h3{ font-size:1rem; font-weight:600; color:var(--navy); margin:22px 0 8px; }
+  .legal p, .legal li{ font-size:.96rem; color:var(--ink); margin-bottom:12px; }
+  .legal ul, .legal ol{ padding-left:22px; margin-bottom:14px; }
+  .legal a{ color:var(--plum); }
+  .legal .summary{ background:#fff; border:1px solid #ece2d6; border-left:4px solid var(--gold); border-radius:10px; padding:18px 22px; margin-bottom:8px; }
+  .legal .summary p{ margin:0; }
+  .legal table{ width:100%; border-collapse:collapse; margin:10px 0 18px; font-size:.88rem; }
+  .legal th, .legal td{ border:1px solid #e6ded4; padding:10px 12px; text-align:left; vertical-align:top; color:var(--ink); }
+  .legal th{ background:#f6efe6; color:var(--navy); font-weight:600; }
+  .todo{ background:#fff3b0; color:#5a4a00; padding:0 4px; border-radius:3px; font-weight:600; }
+  .toc{ background:#fff; border:1px solid #ece2d6; border-radius:10px; padding:16px 24px; margin:24px 0 0; }
+  .toc ol{ margin:0; columns:2; column-gap:32px; }
+  .toc li{ margin-bottom:6px; font-size:.9rem; }
+  @media(max-width:820px){
+    nav{ padding:16px 22px; }
+    .nav-actions .join-btn{ display:none; }
+    .nav-mobile-toggle{ display:flex; }
+    .navlinks{ display:none; }
+    .legal-hero h1{ font-size:2rem; }
+    .toc ol{ columns:1; }
+    .legal table, .legal thead, .legal tbody, .legal tr, .legal th, .legal td{ display:block; }
+    .legal thead{ display:none; }
+    .legal td::before{ content:attr(data-l) ": "; font-weight:600; color:var(--navy); }
+    footer{ padding:44px 22px 26px; }
+  }
+  .note{ background:#f6e6ea; border-left:4px solid var(--rose); border-radius:6px; padding:14px 20px; margin:18px 0; }
+  .note strong{ display:block; font-family:'Josefin Sans',sans-serif; letter-spacing:.12em; text-transform:uppercase; font-size:.68rem; color:var(--plum); margin-bottom:6px; }
+  .note p{ margin:0; font-size:.9rem; }
+</style>
+</head>
+<body>
+<div id="sc-cookie-banner" role="dialog" aria-label="Cookie preferences">
+  <div class="sc-cookie-inner">
+    <p class="sc-cookie-text">
+      We use analytics cookies to understand how visitors use this site and improve your experience.
+      No cookies are set until you choose. See our <a href="https://www.singles-network.com/privacy-policy">Privacy Policy</a> for details.
+    </p>
+    <div class="sc-cookie-actions">
+      <button type="button" class="sc-btn sc-btn-reject" id="sc-cookie-reject">Reject</button>
+      <button type="button" class="sc-btn sc-btn-accept" id="sc-cookie-accept">Accept</button>
+    </div>
+  </div>
+</div>
+<button type="button" id="sc-cookie-manage-link" aria-label="Cookie preferences" title="Cookie preferences">🍪</button>
+<script>
+(function () {
+  var GA_ID = 'G-F8G4QMSHJN';
+  var STORAGE_KEY = 'sc_cookie_consent';
+
+  function loadGA() {
+    if (window.__scGALoaded) return;
+    window.__scGALoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', GA_ID, { anonymize_ip: true });
+  }
+
+  function getConsent() {
+    try { return localStorage.getItem(STORAGE_KEY); } catch (e) { return null; }
+  }
+  function setConsent(value) {
+    try { localStorage.setItem(STORAGE_KEY, value); } catch (e) {}
+  }
+  function showBanner() {
+    document.getElementById('sc-cookie-banner').classList.add('sc-visible');
+  }
+  function hideBanner() {
+    document.getElementById('sc-cookie-banner').classList.remove('sc-visible');
+  }
+  function showManageLink() {
+    document.getElementById('sc-cookie-manage-link').classList.add('sc-visible');
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var consent = getConsent();
+
+    if (consent === 'accepted') {
+      loadGA();
+      showManageLink();
+    } else if (consent === 'rejected') {
+      showManageLink();
+    } else {
+      showBanner();
+    }
+
+    document.getElementById('sc-cookie-accept').addEventListener('click', function () {
+      setConsent('accepted');
+      loadGA();
+      hideBanner();
+      showManageLink();
+    });
+
+    document.getElementById('sc-cookie-reject').addEventListener('click', function () {
+      setConsent('rejected');
+      hideBanner();
+      showManageLink();
+    });
+
+    document.getElementById('sc-cookie-manage-link').addEventListener('click', function () {
+      showBanner();
+    });
+  });
+})();
+</script>
+<nav id="main-nav">
+  <a class="logo" href="/">The Professional <span>Singles Network</span></a>
+  <div class="nav-actions">
+    <a href="/" class="join-btn" style="background:transparent;color:var(--navy);border:1px solid var(--navy);box-shadow:none;">&larr; Back to home</a>
+    <a href="https://www.sparkedconnection.com/form" class="join-btn">Join Free</a>
+  </div>
+</nav>
+<div class="legal-hero">
+  <div class="label">Legal</div>
+  <h1>Accessibility Statement</h1>
+  <p>Last updated: 29 September 2026</p>
+</div>
+<main class="legal">
+<div class="summary"><p><strong>In short:</strong> we want everyone to be able to use the Professional Singles Network website and take part in our events. We have not yet had the site independently audited, we know of some areas that fall short, and we&rsquo;d like to hear from you if you find a barrier.</p></div>
+<nav class="toc" aria-label="Contents"><ol><li><a href="#commit">Our commitment</a></li><li><a href="#status">How accessible is this website?</a></li><li><a href="#done">What we have done</a></li><li><a href="#limits">Known limitations</a></li><li><a href="#events">Accessibility at our events</a></li><li><a href="#tech">Browsers and assistive technology</a></li><li><a href="#feedback">Feedback and contact</a></li><li><a href="#enforce">If you are not happy with our response</a></li><li><a href="#prep">About this statement</a></li></ol></nav>
+
+<h2 id="commit">1. Our commitment</h2>
+<p>Sparked Connection Ltd, which operates the Professional Singles Network (singles-network.com), is committed to making this website and our events accessible to as many people as possible, including disabled people and people using assistive technology. We aim to meet the Web Content Accessibility Guidelines (WCAG) 2.2 at level AA, and we take our responsibilities under the Equality Act 2010 seriously.</p>
+
+<h2 id="status">2. How accessible is this website?</h2>
+<p>This website is <strong>partially compliant</strong> with WCAG 2.2 level AA. That is our own assessment: the site has not yet been independently audited, and we know of some areas that need work, listed in section 4. We are working to improve them.</p>
+
+<h2 id="done">3. What we have done</h2>
+<ul>
+<li>The website sets its language (English) and uses a clear heading structure.</li>
+<li>Images carry text descriptions (alt text).</li>
+<li>The layout adapts to phones, tablets and desktops, and text can be enlarged using your browser&rsquo;s zoom.</li>
+<li>Menus and buttons are real controls that can be used with a keyboard; the mobile menu announces whether it is open or closed to screen readers.</li>
+<li>The FAQ uses standard expandable sections rather than custom scripts.</li>
+<li>The cookie banner is announced as a dialog, and you can accept or reject analytics cookies with equal ease. Rejecting has no effect on your use of the site.</li>
+<li>Our contact and sign-up routes include email as well as forms.</li>
+</ul>
+
+<h2 id="limits">4. Known limitations</h2>
+<p>We are aware of the following, and plan to address them:</p>
+<ul>
+<li><strong>Background video.</strong> The top of the home page plays a muted looping background video that starts automatically and does not yet have a pause control.</li>
+<li><strong>Animation.</strong> Some decorative animation (for example on the event announcement banner) does not yet respond to the &ldquo;reduce motion&rdquo; setting on your device.</li>
+<li><strong>Skip link and page landmarks.</strong> There is not yet a &ldquo;skip to main content&rdquo; link, and some page regions are not yet marked up as landmarks, which may make keyboard and screen-reader navigation slower than it should be.</li>
+<li><strong>Keyboard focus.</strong> Keyboard focus indicators rely on the browser defaults and may be hard to see on some backgrounds.</li>
+<li><strong>Images with text over them.</strong> Some sections place text over photographs, and we have not yet formally tested the colour contrast for every combination.</li>
+<li><strong>Third-party services.</strong> Some sign-up, booking and event pages are hosted by our sister site or by third-party providers (for example forms, event booking, payment and video-call tools). We do not control how accessible these are, but we will raise problems with the provider where we can.</li>
+</ul>
+
+<h2 id="events">5. Accessibility at our events</h2>
+<p>Our events are held at a range of venues in London and online, and access varies from venue to venue. We want everyone to be able to join in.</p>
+<ul>
+<li>Please tell us about any access needs before you book, so we can talk about what is possible and make reasonable adjustments where we can. This might include step-free access, seating, quieter arrangements, dietary needs, or support for online sessions.</li>
+<li>For each event, we will tell you what we know about the venue before you book, and we are happy to answer questions in advance.</li>
+<li>Access information you choose to share is used only to help us organise the event, and is handled in line with our <a href="https://www.singles-network.com/privacy-policy">Privacy Policy</a>.</li>
+<li>If you prefer, you can take part in our online socials and networking calls from home.</li>
+</ul>
+<div class="note"><strong>Please note</strong><p>Some activities, such as outdoor activities, getaway trips and live experiences, depend on venues and third-party providers, so we may not always be able to accommodate every need. We will always be honest with you about this before you pay.</p></div>
+
+<h2 id="tech">6. Browsers and assistive technology</h2>
+<p>The website is designed to work with current versions of the main desktop and mobile browsers, and with common assistive technology such as screen readers, magnification software and voice control. Older browsers may not display every feature correctly. If something does not work for you, please let us know which browser and assistive technology you use so we can investigate.</p>
+
+<h2 id="feedback">7. Feedback and contact</h2>
+<p>If you find any problem not listed on this page, cannot access something, or would like information in a different format (for example a plain-text version of a page, larger print, or a call instead of a form), please contact us:</p>
+<ul>
+<li>Email: <a href="mailto:hello@sparkedconnection.com">hello@sparkedconnection.com</a></li>
+</ul>
+<p>Please tell us the web address of the page, what the problem is, and how you would like to receive the information. We aim to reply within 5 working days and will work with you to find a solution.</p>
+
+<h2 id="enforce">8. If you are not happy with our response</h2>
+<p>If you contact us about an accessibility problem and are not happy with our response, you can contact the Equality Advisory and Support Service (EASS) at <a href="https://www.equalityadvisoryservice.com" target="_blank" rel="noopener">equalityadvisoryservice.com</a> or on 0808 800 0082. If you are in Northern Ireland, you can contact the <a href="https://www.equalityni.org" target="_blank" rel="noopener">Equality Commission for Northern Ireland</a>.</p>
+
+<h2 id="prep">9. About this statement</h2>
+<p>This statement was prepared on 29 September 2026, based on our own review of the website. We will review and update it as we make improvements, and at least once a year.</p>
+</main>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>The Professional <span>Singles Network</span></h3>
+      <p>A private community for ambitious professionals to grow, connect, and build.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="/#overview">Overview</a></li>
+        <li><a href="/#events">Events</a></li>
+        <li><a href="/#intro-call">How It Works</a></li>
+        <li><a href="/#faq">FAQ</a></li>
+        <li><a href="https://www.sparkedconnection.com/form">Apply to Join</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="https://www.singles-network.com/terms-conditions">Terms &amp; Conditions</a></li>
+        <li><a href="https://www.singles-network.com/privacy-policy">Privacy Policy</a></li>
+        <li><a href="https://www.singles-network.com/accessibility">Accessibility</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 The Professional Singles Network. All rights reserved.</p>
+    <p>GDPR Compliant &bull; United Kingdom</p>
+  </div>
+</footer>
+</body>
+</html>
