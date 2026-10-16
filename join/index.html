@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Join the Network | The Professional Singles Network</title>
+<link rel="icon" href="/sn-favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/sn-favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/sn-favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/sn-favicon-192.png">
+<link rel="apple-touch-icon" href="/sn-apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Join the Professional Singles Network - free to join. Tell us what you are looking for: friendships, mentorship or events.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.singles-network.com/join">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Inter:wght@400;500;600&family=Josefin+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1E3151;
+    --rose:#CE7E98;
+    --gold:#E6A961;
+    --plum:#b2345e;
+    --cream:#FDF9F5;
+    --navy-deep:#131F33;
+    --ink:#3A4256;
+  }
+  html{ scroll-behavior:smooth; }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  section{ scroll-margin-top:24px; }
+  body{
+    font-family:'Inter', sans-serif;
+    background:var(--cream);
+    color:var(--navy);
+    line-height:1.6;
+  }
+  .display{font-family:'Cormorant Garamond', serif;}
+  .label{font-family:'Josefin Sans', sans-serif; letter-spacing:.14em; text-transform:uppercase; font-size:.72rem;}
+
+  /* NAV */
+  nav{
+    display:grid; grid-template-columns:1fr auto 1fr; align-items:center;
+    padding:22px 48px; background:var(--cream); border-bottom:1px solid #ece2d6;
+    position:relative; z-index:100;
+  }
+  .logo{font-family:'Cormorant Garamond', serif; font-size:1.4rem; color:var(--navy); font-style:italic;}
+  .logo span{
+    background:linear-gradient(135deg, var(--rose), var(--gold));
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+  }
+  .navlinks{display:flex; gap:34px; list-style:none; grid-column:2; justify-content:center;}
+  .navlinks a{color:var(--navy); text-decoration:none; font-size:.85rem; font-family:'Inter'; font-weight:500;}
+  .navlinks a:hover{ color:var(--rose); }
+  .nav-actions{ display:flex; align-items:center; gap:14px; grid-column:3; justify-self:end; }
+  .join-btn{
+    display:inline-block; background:var(--plum); color:#fff; border:none; padding:11px 22px;
+    border-radius:30px; font-size:.85rem; font-family:'Inter'; font-weight:600; cursor:pointer;
+    box-shadow:0 4px 6px rgba(178,52,94,.25), 0 2px 3px rgba(178,52,94,.15);
+    transition:all .3s ease; text-decoration:none;
+  }
+  .join-btn:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(178,52,94,.35); }
+
+  /* MOBILE MENU TOGGLE */
+  .nav-mobile-toggle{
+    display:none; flex-direction:column; justify-content:center; gap:5px;
+    width:38px; height:38px; background:none; border:none; cursor:pointer; padding:0;
+  }
+  .nav-mobile-toggle span{
+    display:block; width:100%; height:2px; background:var(--navy); border-radius:2px;
+    transition:transform .25s ease, opacity .25s ease;
+  }
+  .nav-mobile-toggle.open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+  .nav-mobile-toggle.open span:nth-child(2){ opacity:0; }
+  .nav-mobile-toggle.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu-panel{
+    display:none; position:absolute; top:100%; left:0; right:0;
+    background:var(--cream); border-bottom:1px solid #ece2d6;
+    box-shadow:0 12px 24px rgba(30,49,81,.1);
+    padding:8px 24px 20px; z-index:99;
+  }
+  .mobile-menu-panel.open{ display:block; }
+  .mobile-menu-panel a{
+    display:block; padding:12px 4px; color:var(--navy); text-decoration:none;
+    font-family:'Inter'; font-size:.95rem; border-bottom:1px solid #ece2d6;
+  }
+  .mobile-menu-panel a:last-of-type{ border-bottom:none; }
+  .mobile-menu-cta{
+    margin-top:14px; text-align:center; padding:12px !important; border:none !important;
+    background:var(--plum); color:#fff !important; border-radius:30px; font-weight:600;
+  }
+  footer{
+    background:var(--navy-deep); padding:56px 48px 30px;
+  }
+  .footer-inner{
+    display:grid; grid-template-columns:2fr 1fr 1fr; gap:48px;
+    max-width:1100px; margin:0 auto; padding-bottom:40px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .footer-brand h3{
+    font-family:'Cormorant Garamond', serif; font-size:1.3rem; font-weight:700; color:#fff; margin-bottom:10px;
+  }
+  .footer-brand h3 span{
+    background:linear-gradient(135deg, var(--rose), var(--gold));
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+  }
+  .footer-logo{ height:74px; width:auto; display:block; margin-bottom:14px; }
+  .footer-brand p{ font-size:.85rem; color:rgba(255,255,255,.5); line-height:1.7; max-width:300px; }
+  .footer-col h4{
+    font-family:'Josefin Sans'; font-size:.68rem; font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:rgba(255,255,255,.5); margin-bottom:16px;
+  }
+  .footer-col ul{ list-style:none; display:flex; flex-direction:column; gap:9px; }
+  .footer-col a{ font-size:.85rem; color:rgba(255,255,255,.65); text-decoration:none; transition:color .2s; }
+  .footer-col a:hover{ color:var(--gold); }
+  .footer-bottom{
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;
+    max-width:1100px; margin:0 auto; padding-top:26px;
+  }
+  .footer-bottom p{ font-size:.76rem; color:rgba(255,255,255,.35); }
+  @media(max-width:760px){
+    .footer-inner{ grid-template-columns:1fr; gap:32px; }
+    .footer-bottom{ flex-direction:column; text-align:center; }
+  }
+  /* COOKIE BANNER — matching sparkedconnection.com's implementation */
+  #sc-cookie-banner{
+    position:fixed; left:0; right:0; bottom:0; z-index:9999;
+    background:var(--cream); border-top:1px solid #ece2d6;
+    box-shadow:0 -4px 20px rgba(30,49,81,.10);
+    padding:1.25rem 1.5rem; font-family:'Inter', sans-serif; display:none;
+  }
+  #sc-cookie-banner.sc-visible{ display:block; }
+  .sc-cookie-inner{
+    max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap;
+    align-items:center; justify-content:space-between; gap:1rem;
+  }
+  .sc-cookie-text{ flex:1 1 380px; color:var(--navy); font-size:.9rem; line-height:1.6; }
+  .sc-cookie-text a{ color:var(--rose); text-decoration:underline; }
+  .sc-cookie-actions{ display:flex; gap:.75rem; flex-wrap:wrap; }
+  .sc-btn{
+    font-family:'Inter', sans-serif; font-size:.85rem; font-weight:500;
+    padding:.65rem 1.4rem; border-radius:9999px; cursor:pointer;
+    border:1px solid transparent; transition:all .2s; white-space:nowrap;
+  }
+  .sc-btn-reject{ background:transparent; border-color:var(--navy); color:var(--navy); }
+  .sc-btn-reject:hover{ background:rgba(30,49,81,.06); }
+  .sc-btn-accept{ background:var(--rose); color:#fff; }
+  .sc-btn-accept:hover{ background:var(--gold); }
+  #sc-cookie-manage-link{
+    position:fixed; left:1rem; bottom:1rem; z-index:9998;
+    width:38px; height:38px; border-radius:50%;
+    background:var(--navy); color:#fff; font-size:1rem;
+    display:none; align-items:center; justify-content:center;
+    cursor:pointer; border:none; box-shadow:0 4px 14px rgba(30,49,81,.3);
+    transition:transform .2s ease;
+  }
+  #sc-cookie-manage-link.sc-visible{ display:flex; }
+  #sc-cookie-manage-link:hover{ transform:scale(1.08); }
+  @media(max-width:640px){
+    .sc-cookie-actions{ width:100%; justify-content:stretch; }
+    .sc-btn{ flex:1; text-align:center; }
+    #sc-cookie-manage-link{ width:34px; height:34px; left:.75rem; bottom:.75rem; font-size:.9rem; }
+  }
+  nav{ grid-template-columns:auto 1fr; }
+  .nav-actions{ grid-column:2; }
+  .legal-hero{ background:var(--navy-deep); color:#fff; text-align:center; padding:64px 24px 56px; }
+  .legal-hero .label{ color:var(--gold); margin-bottom:12px; }
+  .legal-hero h1{ font-family:'Cormorant Garamond',serif; font-weight:500; font-size:2.6rem; margin-bottom:10px; }
+  .legal-hero p{ color:rgba(255,255,255,.65); font-size:.9rem; }
+  .legal{ max-width:800px; margin:0 auto; padding:56px 24px 80px; }
+  .legal h2{ font-family:'Cormorant Garamond',serif; font-size:1.7rem; font-weight:600; color:var(--navy); margin:40px 0 12px; }
+  .legal h3{ font-size:1rem; font-weight:600; color:var(--navy); margin:22px 0 8px; }
+  .legal p, .legal li{ font-size:.96rem; color:var(--ink); margin-bottom:12px; }
+  .legal ul, .legal ol{ padding-left:22px; margin-bottom:14px; }
+  .legal a{ color:var(--plum); }
+  .legal .summary{ background:#fff; border:1px solid #ece2d6; border-left:4px solid var(--gold); border-radius:10px; padding:18px 22px; margin-bottom:8px; }
+  .legal .summary p{ margin:0; }
+  .legal table{ width:100%; border-collapse:collapse; margin:10px 0 18px; font-size:.88rem; }
+  .legal th, .legal td{ border:1px solid #e6ded4; padding:10px 12px; text-align:left; vertical-align:top; color:var(--ink); }
+  .legal th{ background:#f6efe6; color:var(--navy); font-weight:600; }
+  .todo{ background:#fff3b0; color:#5a4a00; padding:0 4px; border-radius:3px; font-weight:600; }
+  .toc{ background:#fff; border:1px solid #ece2d6; border-radius:10px; padding:16px 24px; margin:24px 0 0; }
+  .toc ol{ margin:0; columns:2; column-gap:32px; }
+  .toc li{ margin-bottom:6px; font-size:.9rem; }
+  @media(max-width:820px){
+    nav{ padding:16px 22px; }
+    .nav-actions .join-btn{ display:none; }
+    .nav-mobile-toggle{ display:flex; }
+    .navlinks{ display:none; }
+    .legal-hero h1{ font-size:2rem; }
+    .toc ol{ columns:1; }
+    .legal table, .legal thead, .legal tbody, .legal tr, .legal th, .legal td{ display:block; }
+    .legal thead{ display:none; }
+    .legal td::before{ content:attr(data-l) ": "; font-weight:600; color:var(--navy); }
+    footer{ padding:44px 22px 26px; }
+  }
+  .note{ background:#f6e6ea; border-left:4px solid var(--rose); border-radius:6px; padding:14px 20px; margin:18px 0; }
+  .note strong{ display:block; font-family:'Josefin Sans',sans-serif; letter-spacing:.12em; text-transform:uppercase; font-size:.68rem; color:var(--plum); margin-bottom:6px; }
+  .note p{ margin:0; font-size:.9rem; }
+
+  /* ───── JOIN FORM ───── */
+  nav{ grid-template-columns:auto 1fr; }
+  .nav-actions{ grid-column:2; }
+  .logo{ text-decoration:none; }
+  .skip-link{ position:absolute; left:-9999px; top:8px; background:var(--navy); color:#fff; padding:10px 16px; border-radius:8px; z-index:1000; font-size:.85rem; }
+  .skip-link:focus{ left:12px; }
+  .join-hero{ background:var(--navy-deep); color:#fff; text-align:center; padding:64px 24px 52px; }
+  .join-hero .label{ color:var(--gold); margin-bottom:12px; }
+  .join-hero h1{ font-family:'Cormorant Garamond',serif; font-weight:500; font-size:clamp(2.3rem,5vw,3.3rem); line-height:1.1; margin-bottom:16px; }
+  .join-hero p{ color:rgba(255,255,255,.72); max-width:560px; margin:0 auto 24px; font-size:1rem; line-height:1.7; }
+  .join-badges{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+  .join-badge{ border:1px solid rgba(230,169,97,.55); color:var(--gold); padding:6px 16px; border-radius:999px; font-size:.78rem; font-weight:500; }
+
+  .join-wrap{ max-width:820px; margin:0 auto; padding:48px 24px 80px; }
+  .jcard{ background:#fff; border:1px solid #ece2d6; border-radius:16px; padding:34px 34px 38px; margin-bottom:26px; box-shadow:0 2px 12px rgba(30,49,81,.05); }
+  .jhead{ display:flex; gap:16px; align-items:flex-start; margin-bottom:26px; padding-bottom:22px; border-bottom:1px solid #ece2d6; }
+  .jnum{ width:38px; height:38px; border-radius:50%; flex-shrink:0; background:var(--plum); color:#fff; font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:700; display:flex; align-items:center; justify-content:center; }
+  .jhead h2{ font-family:'Cormorant Garamond',serif; font-size:1.65rem; font-weight:600; color:var(--navy); margin-bottom:4px; line-height:1.2; }
+  .jhead p{ font-size:.86rem; color:#6b7388; line-height:1.55; }
+  .jtime{ margin-left:auto; flex-shrink:0; font-size:.72rem; color:#6b7388; background:var(--cream); padding:4px 10px; border-radius:999px; border:1px solid #ece2d6; white-space:nowrap; }
+
+  .jgrid{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  .jstack{ display:flex; flex-direction:column; gap:20px; }
+  .jfield{ display:flex; flex-direction:column; gap:6px; border:0; min-width:0; }
+  .jfield > legend, .jfield > label, .jlabel{ font-size:.86rem; font-weight:600; color:var(--navy); padding:0; display:block; }
+  .req{ color:var(--plum); }
+  .opt{ color:#7a8296; font-weight:400; font-size:.78rem; }
+  .hint{ font-size:.78rem; color:#6b7388; line-height:1.5; }
+  .jgroup{ font-family:'Josefin Sans',sans-serif; font-size:.72rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:#7a8296; margin:30px 0 16px; padding-bottom:8px; border-bottom:1px solid #ece2d6; }
+  .jgroup:first-child{ margin-top:0; }
+
+  .join-wrap input[type=text], .join-wrap input[type=email], .join-wrap input[type=tel], .join-wrap input[type=number], .join-wrap input[type=date], .join-wrap select, .join-wrap textarea{
+    width:100%; padding:11px 14px; border:1.5px solid #ddd2c4; border-radius:8px; background:var(--cream);
+    font-family:'Inter',sans-serif; font-size:.92rem; color:var(--navy); transition:border-color .2s, box-shadow .2s;
+  }
+  .join-wrap textarea{ min-height:96px; resize:vertical; line-height:1.5; }
+  .join-wrap select{ appearance:none; -webkit-appearance:none; padding-right:38px;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%238896b3' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat:no-repeat; background-position:right 12px center; }
+  .join-wrap input:focus-visible, .join-wrap select:focus-visible, .join-wrap textarea:focus-visible,
+  .join-wrap button:focus-visible, .join-wrap a:focus-visible{ outline:2px solid var(--plum); outline-offset:2px; }
+  .join-wrap input:focus, .join-wrap select:focus, .join-wrap textarea:focus{ border-color:var(--plum); box-shadow:0 0 0 3px rgba(178,52,94,.12); }
+  .join-wrap input[readonly]{ background:#f3ece3; color:#6b7388; cursor:not-allowed; }
+
+  /* checkbox / radio cards */
+  .jchecks{ display:flex; flex-direction:column; gap:10px; }
+  .jchecks.two{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .jchk{ display:flex; align-items:flex-start; gap:10px; padding:11px 14px; border:1.5px solid #ddd2c4; border-radius:8px; background:var(--cream); cursor:pointer; font-size:.9rem; color:var(--navy); transition:border-color .2s, background .2s; line-height:1.45; }
+  .jchk:hover{ border-color:var(--rose); }
+  .jchk input{ width:17px; height:17px; flex-shrink:0; margin-top:2px; accent-color:var(--plum); }
+  .jchk:has(input:checked){ border-color:var(--plum); background:rgba(178,52,94,.06); }
+  .jchk:has(input:focus-visible){ outline:2px solid var(--plum); outline-offset:2px; }
+  .jchk small{ display:block; color:#6b7388; font-size:.8rem; margin-top:2px; }
+  .jchk.big{ padding:14px 16px; }
+  .jchk.big b{ font-weight:600; }
+  .jpills{ display:flex; flex-wrap:wrap; gap:10px; }
+  .jpill{ position:relative; padding:9px 18px; border-radius:999px; border:1.5px solid #ddd2c4; font-size:.86rem; cursor:pointer; background:var(--cream); color:var(--navy); transition:all .2s; }
+  .jpill input{ position:absolute; opacity:0; inset:0; width:100%; height:100%; margin:0; cursor:pointer; }
+  .jpill:hover{ border-color:var(--rose); }
+  .jpill:has(input:checked){ border-color:var(--plum); background:rgba(178,52,94,.08); color:var(--plum); font-weight:600; }
+  .jpill:has(input:focus-visible){ outline:2px solid var(--plum); outline-offset:2px; }
+
+  .conditional{ display:none; }
+  .conditional.visible{ display:block; }
+  .subpanel{ margin-top:20px; padding:20px 20px 22px; border-left:3px solid var(--gold); background:var(--cream); border-radius:0 10px 10px 0; }
+  .subpanel .jgroup{ margin-top:0; }
+  .other-field{ display:none; margin-top:8px; }
+  .other-field.visible{ display:block; }
+
+  /* photos */
+  .upload-box{ display:block; width:100%; border:2px dashed #d6c9b8; border-radius:12px; padding:34px 20px; text-align:center; background:var(--cream); cursor:pointer; transition:border-color .2s; font-family:inherit; color:var(--navy); }
+  .upload-box:hover{ border-color:var(--plum); }
+  .upload-title{ font-size:.95rem; font-weight:600; margin-bottom:6px; }
+  .upload-sub{ font-size:.8rem; color:#6b7388; line-height:1.6; }
+  .upload-btn{ display:inline-block; margin-top:14px; padding:9px 22px; border-radius:999px; background:var(--plum); color:#fff; font-size:.84rem; font-weight:600; }
+  .photo-meta{ font-size:.82rem; color:#6b7388; margin-top:12px; text-align:center; }
+  .photo-meta strong{ color:var(--navy); }
+  .photo-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:16px; }
+  .photo-thumb{ position:relative; aspect-ratio:1; border-radius:10px; overflow:hidden; background:#ece2d6; border:1px solid #ece2d6; }
+  .photo-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .photo-thumb button{ position:absolute; top:6px; right:6px; width:26px; height:26px; border-radius:50%; background:rgba(0,0,0,.6); color:#fff; border:none; font-size:16px; line-height:1; cursor:pointer; }
+  .photo-thumb button:hover{ background:var(--plum); }
+  .photo-thumb span{ position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent,rgba(0,0,0,.6)); color:#fff; font-size:.7rem; padding:16px 8px 5px; text-align:center; }
+
+  /* consent */
+  .consent-intro{ font-size:.9rem; color:#5b6479; line-height:1.7; margin-bottom:18px; padding-bottom:18px; border-bottom:1px solid #ece2d6; }
+  .consent-list{ display:flex; flex-direction:column; gap:12px; }
+  .consent-withdraw{ font-size:.82rem; color:#6b7388; margin-top:18px; }
+  .consent-withdraw a, .consent-legal a{ color:var(--plum); text-decoration:underline; }
+  .consent-legal{ display:flex; gap:20px; flex-wrap:wrap; font-size:.84rem; margin-top:18px; }
+
+  /* range */
+  .rangewrap{ display:flex; align-items:center; gap:12px; }
+  .rangewrap input[type=range]{ flex:1; accent-color:var(--plum); }
+  .rangeval{ min-width:28px; text-align:center; font-weight:700; color:var(--plum); }
+  .rangelabels{ display:flex; justify-content:space-between; font-size:.76rem; color:#6b7388; }
+
+  /* submit */
+  .jsubmit{ background:#fff; border:1px solid #ece2d6; border-radius:16px; padding:34px; text-align:center; }
+  .jsubmit h2{ font-family:'Cormorant Garamond',serif; font-size:1.7rem; color:var(--navy); margin-bottom:8px; }
+  .jsubmit p{ font-size:.9rem; color:#6b7388; margin-bottom:22px; }
+  .jsubmit .cf-turnstile{ display:flex; justify-content:center; margin-bottom:18px; min-height:65px; }
+  .submit-btn{ display:inline-flex; align-items:center; gap:10px; padding:15px 44px; border-radius:999px; background:var(--plum); color:#fff; font-family:'Inter',sans-serif; font-size:1rem; font-weight:600; border:none; cursor:pointer; box-shadow:0 6px 20px rgba(178,52,94,.3); transition:all .25s; }
+  .submit-btn:hover{ transform:translateY(-2px); box-shadow:0 10px 26px rgba(178,52,94,.4); }
+  .submit-btn:disabled{ opacity:.65; cursor:not-allowed; transform:none; box-shadow:none; }
+
+  /* validation */
+  .form-error-summary{ display:none; margin:0 0 24px; padding:16px 18px; border:1px solid rgba(178,52,94,.35); border-radius:12px; background:rgba(178,52,94,.06); color:var(--navy); font-size:.9rem; font-weight:500; line-height:1.55; }
+  .form-error-summary.visible{ display:block; }
+  .required-missing{ border-color:var(--plum) !important; box-shadow:0 0 0 3px rgba(178,52,94,.12) !important; }
+  div.required-missing, fieldset.required-missing{ border:1.5px solid var(--plum); border-radius:10px; padding:10px; }
+  .field-error-message{ color:var(--plum); font-size:.8rem; font-weight:500; margin-top:6px; line-height:1.45; }
+  .field-info-message{ color:#2f7d54; font-size:.8rem; font-weight:500; margin-top:6px; line-height:1.45; }
+  .hp{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
+
+  /* success */
+  .jsuccess{ display:none; background:#fff; border:1px solid #ece2d6; border-radius:16px; padding:56px 32px; text-align:center; box-shadow:0 2px 12px rgba(30,49,81,.05); }
+  .jsuccess.show{ display:block; }
+  .jsuccess .tick{ width:70px; height:70px; border-radius:50%; margin:0 auto 22px; display:flex; align-items:center; justify-content:center; background:rgba(178,52,94,.1); color:var(--plum); font-size:2.2rem; font-weight:700; }
+  .jsuccess h2{ font-family:'Cormorant Garamond',serif; font-size:2.1rem; color:var(--navy); margin-bottom:12px; }
+  .jsuccess p{ max-width:540px; margin:0 auto 12px; color:#5b6479; font-size:.98rem; line-height:1.7; }
+  .jsuccess .back{ display:inline-block; margin-top:14px; }
+
+  @media(max-width:820px){
+    nav{ padding:16px 22px; }
+    .join-hero{ padding:48px 20px 40px; }
+    .join-wrap{ padding:32px 16px 64px; }
+    .jcard{ padding:24px 20px 28px; }
+    .jgrid, .jchecks.two{ grid-template-columns:1fr; }
+    .jhead{ flex-wrap:wrap; }
+    .jtime{ margin-left:54px; }
+    .photo-grid{ grid-template-columns:repeat(2,1fr); }
+    .jsubmit{ padding:26px 20px; }
+    footer{ padding:44px 22px 26px; }
+  }
+  @media (prefers-reduced-motion:reduce){ *{ transition:none !important; animation:none !important; scroll-behavior:auto !important; } }
+
+  .intro-optional{ margin-top:14px; }
+  .intro-optional .jchk{ background:transparent; border-style:dashed; font-size:.86rem; color:#4b5468; }
+  .intro-optional .jchk span{ font-style:italic; }
+  .intro-optional .jchk small{ font-style:normal; }
+  .call-q{ margin-top:26px; }
+  .intro-link{ font-size:.82rem; color:#6b7388; margin:8px 2px 0; }
+  .intro-link a{ color:var(--plum); text-decoration:underline; }
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to the form</a>
+<div id="sc-cookie-banner" role="dialog" aria-label="Cookie preferences">
+  <div class="sc-cookie-inner">
+    <p class="sc-cookie-text">
+      We use analytics cookies to understand how visitors use this site and improve your experience.
+      No cookies are set until you choose. See our <a href="https://www.singles-network.com/privacy-policy">Privacy Policy</a> for details.
+    </p>
+    <div class="sc-cookie-actions">
+      <button type="button" class="sc-btn sc-btn-reject" id="sc-cookie-reject">Reject</button>
+      <button type="button" class="sc-btn sc-btn-accept" id="sc-cookie-accept">Accept</button>
+    </div>
+  </div>
+</div>
+<button type="button" id="sc-cookie-manage-link" aria-label="Cookie preferences" title="Cookie preferences">🍪</button>
+<script>
+(function () {
+  var GA_ID = 'G-F8G4QMSHJN';
+  var STORAGE_KEY = 'sc_cookie_consent';
+
+  function loadGA() {
+    if (window.__scGALoaded) return;
+    window.__scGALoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', GA_ID, { anonymize_ip: true });
+  }
+
+  function getConsent() {
+    try { return localStorage.getItem(STORAGE_KEY); } catch (e) { return null; }
+  }
+  function setConsent(value) {
+    try { localStorage.setItem(STORAGE_KEY, value); } catch (e) {}
+  }
+  function showBanner() {
+    document.getElementById('sc-cookie-banner').classList.add('sc-visible');
+  }
+  function hideBanner() {
+    document.getElementById('sc-cookie-banner').classList.remove('sc-visible');
+  }
+  function showManageLink() {
+    document.getElementById('sc-cookie-manage-link').classList.add('sc-visible');
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var consent = getConsent();
+
+    if (consent === 'accepted') {
+      loadGA();
+      showManageLink();
+    } else if (consent === 'rejected') {
+      showManageLink();
+    } else {
+      showBanner();
+    }
+
+    document.getElementById('sc-cookie-accept').addEventListener('click', function () {
+      setConsent('accepted');
+      loadGA();
+      hideBanner();
+      showManageLink();
+    });
+
+    document.getElementById('sc-cookie-reject').addEventListener('click', function () {
+      setConsent('rejected');
+      hideBanner();
+      showManageLink();
+    });
+
+    document.getElementById('sc-cookie-manage-link').addEventListener('click', function () {
+      showBanner();
+    });
+  });
+})();
+</script>
+<nav id="main-nav">
+  <a class="logo" href="/">The Professional <span>Singles Network</span></a>
+  <div class="nav-actions">
+    <a href="/" class="join-btn" style="background:transparent;color:var(--navy);border:1px solid var(--navy);box-shadow:none;">&larr; Back to home</a>
+  </div>
+</nav>
+
+<header class="join-hero">
+  <div class="label">Join free</div>
+  <h1>Join the Professional Singles Network</h1>
+  <p>A private community for ambitious professionals to grow, connect and build - friendships, mentorship and events.</p>
+  <div class="join-badges">
+    <span class="join-badge">Free to join</span>
+    <span class="join-badge">Most questions optional</span>
+    <span class="join-badge">About 5 minutes</span>
+  </div>
+</header>
+<main id="main" class="join-wrap">
+<form id="questionnaire" accept-charset="UTF-8" novalidate>
+  <div class="form-error-summary" id="form-error-summary" role="alert" tabindex="-1">Almost there - please complete the highlighted details before submitting.</div>
+  <input type="hidden" name="service_interest" value="Singles Network (Free)">
+  <div class="hp" aria-hidden="true"><label for="website">Leave this field blank</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
+  
+<section class="jcard" aria-labelledby="h-looking">
+  <div class="jhead"><div class="jnum" aria-hidden="true">1</div><div><h2><span id="h-looking">What brings you here?</span></h2><p>Tell us what you would like from the Network - there is no wrong answer, and you can change your mind at any time.</p></div></div>
+  <fieldset class="jfield" id="looking-for-group"><legend>What are you looking for? <span class="req" aria-hidden="true">*</span></legend><p class="hint">Select everything that applies - most members choose more than one.</p><div class="jchecks"><label class="jchk big"><input type="checkbox" name="looking_for" value="Friendship &amp; Community"><span>New friendships &amp; community<small>Meet like-minded professionals in a relaxed, organic way</small></span></label><label class="jchk big"><input type="checkbox" name="looking_for" value="Events &amp; Workshops"><span>Events, workshops &amp; socials<small>Co-working days, socials, workshops and trips</small></span></label><label class="jchk big"><input type="checkbox" name="looking_for" value="Mentorship"><span>Mentorship<small>Find a mentor, mentor others, or join a peer circle</small></span></label><label class="jchk big"><input type="checkbox" name="looking_for" value="Not sure yet"><span>Not sure yet - open to it all</span></label></div></fieldset>
+  <div class="intro-optional">
+    <label class="jchk"><input type="checkbox" name="sparked_connection_interest" value="Yes - please contact me about relationship introductions"><span>We get asked about this a lot! This group is all about friendship, but if you&rsquo;re looking for a relationship, tick this box and our sister brand, Sparked Connection, will get in touch with you<small>Optional - we&rsquo;ll use your contact details so they can reach out.</small></span></label>
+    <p class="intro-link">Prefer to look around first? <a href="https://www.sparkedconnection.com" target="_blank" rel="noopener">Visit the Sparked Connection website</a>.</p>
+  </div>
+  
+<div class="conditional subpanel" id="mentorship-details">
+  <div class="jgroup">A little more about mentorship</div>
+  <div class="jstack">
+<fieldset class="jfield"><legend>Are you looking for a mentor, to mentor others, or both? <span class="opt">(Optional)</span></legend><div class="jpills"><label class="jpill"><input type="radio" name="mentorship_role" value="A mentor for me"> A mentor for me</label><label class="jpill"><input type="radio" name="mentorship_role" value="To mentor others"> To mentor others</label><label class="jpill"><input type="radio" name="mentorship_role" value="Both"> Both</label><label class="jpill"><input type="radio" name="mentorship_role" value="Not sure yet"> Not sure yet</label></div></fieldset>
+    <div class="conditional" id="mentorship-receiving-field">
+<div class="jfield "><label for="mentorship-receiving-select">What sort of mentorship would you be interested in receiving? <span class="opt">(Optional)</span></label><select id="mentorship-receiving-select" name="mentorship_topics_receiving"><option value="">Select an area</option><option>Career progression &amp; promotion</option><option>Starting or growing a business</option><option>Leadership &amp; management</option><option>AI &amp; new technology skills</option><option>Personal branding &amp; visibility</option><option>Public speaking &amp; communication</option><option>Negotiation</option><option>Career pivots &amp; reinvention</option><option value="Other">Other (please specify)</option></select></div>
+      <div class="other-field" id="mentorship-receiving-other-field"><input type="text" name="mentorship_topics_receiving_other" placeholder="Please specify" aria-label="Other mentorship area you would like to receive" required></div>
+    </div>
+    <div class="conditional" id="mentorship-giving-field">
+<div class="jfield "><label for="mentorship-giving-select">What areas would you feel comfortable being a mentor in? <span class="opt">(Optional)</span></label><select id="mentorship-giving-select" name="mentorship_topics_giving"><option value="">Select an area</option><option>Career progression &amp; promotion</option><option>Starting or growing a business</option><option>Leadership &amp; management</option><option>AI &amp; new technology skills</option><option>Personal branding &amp; visibility</option><option>Public speaking &amp; communication</option><option>Negotiation</option><option>Career pivots &amp; reinvention</option><option value="Other">Other (please specify)</option></select></div>
+      <div class="other-field" id="mentorship-giving-other-field"><input type="text" name="mentorship_topics_giving_other" placeholder="Please specify" aria-label="Other area you could mentor in" required></div>
+    </div>
+  </div>
+</div>
+  
+<div class="conditional subpanel" id="events-details">
+  <div class="jgroup">A little more about events &amp; workshops</div>
+  <div class="jstack">
+<fieldset class="jfield"><legend>Which workshop topics interest you most? <span class="opt">(Optional)</span></legend><p class="hint">Select all that apply</p><div class="jchecks two"><label class="jchk"><input type="checkbox" name="workshop_topics" value="AI tools for your industry"><span>AI tools for your industry</span></label><label class="jchk"><input type="checkbox" name="workshop_topics" value="Career development"><span>Career development</span></label><label class="jchk"><input type="checkbox" name="workshop_topics" value="Personal branding"><span>Personal branding</span></label><label class="jchk"><input type="checkbox" name="workshop_topics" value="Negotiation skills"><span>Negotiation skills</span></label><label class="jchk"><input type="checkbox" name="workshop_topics" value="Public speaking"><span>Public speaking</span></label><label class="jchk"><input type="checkbox" name="workshop_topics" value="Career pivots &amp; reinvention"><span>Career pivots & reinvention</span></label><label class="jchk"><input type="checkbox" name="workshop_topics" value="Wellbeing &amp; work-life balance"><span>Wellbeing & work-life balance</span></label><label class="jchk"><input type="checkbox" name="workshop_topics" value="Financial &amp; investment literacy"><span>Financial & investment literacy</span></label><label class="jchk"><input type="checkbox" name="workshop_topics" value="Other" id="workshop-other-cb"><span>Other</span></label></div><div class="other-field" id="workshop-other-field"><input type="text" name="workshop_topics_other" placeholder="Please specify" aria-label="Other workshop topic" required></div></fieldset><fieldset class="jfield"><legend>What kind of social events appeal to you? <span class="opt">(Optional)</span></legend><p class="hint">Select all that apply</p><div class="jchecks two"><label class="jchk"><input type="checkbox" name="event_types" value="Pub quizzes &amp; socials"><span>Pub quizzes & socials</span></label><label class="jchk"><input type="checkbox" name="event_types" value="Padel / sport"><span>Padel / sport</span></label><label class="jchk"><input type="checkbox" name="event_types" value="Co-working days"><span>Co-working days</span></label><label class="jchk"><input type="checkbox" name="event_types" value="Dinners &amp; supper clubs"><span>Dinners & supper clubs</span></label><label class="jchk"><input type="checkbox" name="event_types" value="Retreats &amp; getaways"><span>Retreats & getaways</span></label><label class="jchk"><input type="checkbox" name="event_types" value="Golf events"><span>Golf events</span></label><label class="jchk"><input type="checkbox" name="event_types" value="Online workshops"><span>Online workshops</span></label><label class="jchk"><input type="checkbox" name="event_types" value="Online Dial-In Games (via Zoom/Google Meet etc.)"><span>Online Dial-In Games (via Zoom/Google Meet etc.)</span></label></div></fieldset><fieldset class="jfield"><legend>How often would you like to attend events? <span class="opt">(Optional)</span></legend><div class="jpills"><label class="jpill"><input type="radio" name="event_frequency" value="Weekly"> Weekly</label><label class="jpill"><input type="radio" name="event_frequency" value="A few times a month"> A few times a month</label><label class="jpill"><input type="radio" name="event_frequency" value="Monthly"> Monthly</label><label class="jpill"><input type="radio" name="event_frequency" value="Just let me know what&#x27;s on"> Just let me know what&#x27;s on</label></div></fieldset><div class="jfield "><label for="event-needs">Anything we should know to make events comfortable for you? <span class="opt">(Optional)</span></label><p class="hint" id="event-needs-hint">Our in-person events are in London; online socials are open to everyone.</p><textarea id="event-needs" name="event_access_needs" placeholder="e.g. dietary requirements, access needs, or anything else - only if you would like us to know"></textarea></div>
+  </div>
+</div>
+  <div class="call-q"><fieldset class="jfield"><legend>Would you like a short 1:1 call with Anna? <span class="opt">(Optional)</span></legend><p class="hint">Entirely optional. A relaxed 30-minute chat by Zoom or phone, only if you would like one - otherwise you are simply in.</p><div class="jpills"><label class="jpill"><input type="radio" name="wants_intro_call" value="Yes, I&#x27;d like a chat"> Yes, I&#x27;d like a chat</label><label class="jpill"><input type="radio" name="wants_intro_call" value="No thanks - I will just join"> No thanks - I will just join</label></div></fieldset></div>
+</section>
+  
+<section class="jcard" aria-labelledby="h-about">
+  <div class="jhead"><div class="jnum" aria-hidden="true">2</div><div><h2><span id="h-about">About you</span></h2><p>The basics - so we can welcome you properly and keep the community well balanced.</p></div></div>
+  <div class="jgroup">Personal details</div>
+  <div class="jgrid">
+    <div class="jfield "><label for="first-name">First name <span class="req" aria-hidden="true">*</span></label><input type="text" id="first-name" name="first_name" placeholder="Your first name" required autocomplete="given-name"></div>
+    <div class="jfield "><label for="last-name">Surname <span class="req" aria-hidden="true">*</span></label><input type="text" id="last-name" name="last_name" placeholder="Your surname" required autocomplete="family-name"></div>
+    <div class="jfield "><label for="dob-input">Date of birth <span class="req" aria-hidden="true">*</span></label><p class="hint" id="dob-input-hint">Membership is open to people aged 27 and over.</p><input type="date" id="dob-input" name="dob" required autocomplete="bday"></div>
+    <div class="jfield "><label for="age-display">Age</label><input type="text" id="age-display" name="age" placeholder="Calculated from your date of birth" readonly tabindex="-1"></div>
+    <div class="jfield "><label for="gender">Gender <span class="req" aria-hidden="true">*</span></label><select id="gender" name="gender" required><option value="">Select gender</option><option>Male</option><option>Female</option></select></div>
+    <div class="jfield "><label for="based-location">Where are you based? <span class="req" aria-hidden="true">*</span></label><input type="text" id="based-location" name="based_location" placeholder="e.g. London, UK" required autocomplete="address-level2"></div>
+  </div>
+  <div class="jgroup">Work</div>
+  <div class="jstack">
+    <div class="jgrid">
+      <div class="jfield "><label for="occupation">Current occupation or field <span class="req" aria-hidden="true">*</span></label><input type="text" id="occupation" name="occupation" placeholder="e.g. Marketing Manager, Doctor…" required></div>
+      <div class="jfield "><label for="profession-level">Profession level <span class="req" aria-hidden="true">*</span></label><select id="profession-level" name="profession_level" required><option value="">Select profession level</option><option>Early career</option><option>Mid-Level professional</option><option>Senior professional</option><option>Manager / Lead</option><option>Director</option><option>C-suite / Executive</option><option>Entrepreneur / Business owner</option><option>Medical doctor</option><option value="Other">Other (please specify)</option></select></div>
+    </div>
+    <div class="other-field" id="profession-level-other-field"><input type="text" name="profession_level_other" placeholder="Please describe your profession level" aria-label="Your profession level" required></div>
+    <div class="conditional" id="business-details-field">
+      <div class="jgrid">
+        <div class="jfield "><label for="business-name">What's your business name? <span class="req" aria-hidden="true">*</span></label><input type="text" id="business-name" name="business_name" placeholder="e.g. Acme Consulting Ltd" required></div>
+        <div class="jfield "><label for="business-website">What's your website? <span class="opt">(Optional)</span></label><input type="text" id="business-website" name="business_website" placeholder="e.g. www.yourbusiness.com"></div>
+      </div>
+    </div>
+    <div class="jgrid">
+      <div class="jfield "><label for="industry">Professional industry <span class="req" aria-hidden="true">*</span></label><input type="text" id="industry" name="professional_industry" placeholder="e.g. Technology, Finance, Healthcare, Legal…" required></div>
+      <div class="jfield "><label for="linkedin">LinkedIn profile <span class="opt">(Optional)</span></label><input type="text" id="linkedin" name="linkedin_profile" placeholder="e.g. linkedin.com/in/yourname"></div>
+    </div>
+    <div class="jfield "><label for="work-location-select">Where do you work from? <span class="opt">(Optional)</span></label><p class="hint" id="work-location-select-hint">Helps us plan co-working days.</p><select id="work-location-select" name="work_location"><option value="">Select work location</option><option>Fully remote</option><option>Hybrid (mix of office and home)</option><option>Fully office-based</option></select></div>
+    <div class="other-field" id="office-location-field"><input type="text" name="office_location" placeholder="What city or town is your office in?" aria-label="City or town of your office"></div>
+  </div>
+</section>
+  
+<section class="jcard" aria-labelledby="h-interests">
+  <div class="jhead"><div class="jnum" aria-hidden="true">3</div><div><h2><span id="h-interests">Interests &amp; personality</span></h2><p>A little colour, so we can connect you with people you will genuinely click with.</p></div></div>
+  <div class="jstack">
+    <fieldset class="jfield"><legend>What are your hobbies and interests? <span class="opt">(Optional)</span></legend><p class="hint">Select all that apply</p><div class="jchecks two"><label class="jchk"><input type="checkbox" name="hobbies" value="Cooking &amp; food"><span>Cooking & food</span></label><label class="jchk"><input type="checkbox" name="hobbies" value="Travel &amp; exploring"><span>Travel & exploring</span></label><label class="jchk"><input type="checkbox" name="hobbies" value="Fitness &amp; sport"><span>Fitness & sport</span></label><label class="jchk"><input type="checkbox" name="hobbies" value="Reading &amp; books"><span>Reading & books</span></label><label class="jchk"><input type="checkbox" name="hobbies" value="Music"><span>Music</span></label><label class="jchk"><input type="checkbox" name="hobbies" value="Art &amp; creativity"><span>Art & creativity</span></label><label class="jchk"><input type="checkbox" name="hobbies" value="Film &amp; theatre"><span>Film & theatre</span></label><label class="jchk"><input type="checkbox" name="hobbies" value="Dining out &amp; wine"><span>Dining out & wine</span></label><label class="jchk"><input type="checkbox" name="hobbies" value="Outdoors &amp; nature"><span>Outdoors & nature</span></label><label class="jchk"><input type="checkbox" name="hobbies" value="Yoga &amp; mindfulness"><span>Yoga & mindfulness</span></label><label class="jchk"><input type="checkbox" name="hobbies" value="Gaming"><span>Gaming</span></label><label class="jchk"><input type="checkbox" name="hobbies" value="Volunteering &amp; charity"><span>Volunteering & charity</span></label><label class="jchk"><input type="checkbox" name="hobbies" value="Running &amp; cycling"><span>Running & cycling</span></label><label class="jchk"><input type="checkbox" name="hobbies" value="Languages &amp; culture"><span>Languages & culture</span></label><label class="jchk"><input type="checkbox" name="hobbies" value="Photography"><span>Photography</span></label><label class="jchk"><input type="checkbox" name="hobbies" value="Dancing"><span>Dancing</span></label></div></fieldset>
+    <div class="jfield "><label for="hobbies-other">Anything else? <span class="opt">(Optional)</span></label><input type="text" id="hobbies-other" name="hobbies_other" placeholder="e.g. sailing, pottery, stand-up comedy…"></div>
+    <div class="jfield "><label for="can-offer">What could you bring to the Network? <span class="opt">(Optional)</span></label><p class="hint" id="can-offer-hint">Members get the most out of a community where everyone contributes something.</p><textarea id="can-offer" name="can_offer" placeholder="e.g. expertise you are happy to share, introductions, a skill, or simply good company"></textarea></div>
+    <div class="jfield">
+      <span class="jlabel">Myers-Briggs personality type <span class="opt">(Optional)</span></span>
+      <p class="hint">Useful for pairing members with complementary mentors and friends. If you have not taken it, the <a href="https://www.16personalities.com/free-personality-test" target="_blank" rel="noopener noreferrer" style="color:var(--plum);text-decoration:underline;">free 16Personalities test</a> takes about 10 minutes.</p>
+      <select id="mbti" name="mbti" aria-label="Myers-Briggs personality type"><option value="">MBTI personality</option><option>INTJ – Architect / Strategist</option><option>INTP – Logician / Thinker</option><option>ENTJ – Commander / Executive Leader</option><option>ENTP – Debater / Innovator</option><option>INFJ – Advocate / Visionary</option><option>INFP – Mediator / Idealist</option><option>ENFJ – Protagonist / Mentor</option><option>ENFP – Campaigner / Inspirer</option><option>ISTJ – Logistician / Inspector</option><option>ISFJ – Defender / Nurturer</option><option>ESTJ – Executive / Supervisor</option><option>ESFJ – Consul / Caregiver</option><option>ISTP – Virtuoso / Trouble-shooter</option><option>ISFP – Adventurer / Artist</option><option>ESTP – Entrepreneur / Dynamo</option><option>ESFP – Entertainer / Performer</option></select>
+    </div>
+    <div class="jfield "><label for="anything-else">Is there anything else you would like us to know? <span class="opt">(Optional)</span></label><textarea id="anything-else" name="anything_else" placeholder="Share whatever feels right"></textarea></div>
+  </div>
+</section>
+  
+<section class="jcard" aria-labelledby="h-photos">
+<div class="jhead"><div class="jnum" aria-hidden="true">4</div><div><h2><span id="h-photos">Photos</span></h2><p>Please upload at least <strong>1 photo</strong> - a recent, natural photo of your face. Photos are reviewed discreetly and shown only to vetted members, and only where appropriate. We encourage natural, unfiltered images that reflect you as you are.</p></div></div>
+  <div class="jfield" id="photo-field">
+    <button type="button" class="upload-box" id="upload-box" aria-describedby="photo-meta">
+      <div class="upload-title">Upload your photos</div>
+      <div class="upload-sub">Minimum 1 photo required · Up to 4 photos · JPEG or PNG · large photos are resized automatically</div>
+      <span class="upload-btn">Choose photos</span>
+    </button>
+    <input type="file" id="photo-upload" accept="image/*" multiple hidden>
+    <div class="photo-meta" id="photo-meta" aria-live="polite">No photos uploaded yet – <strong>minimum 1 required</strong>.</div>
+    <div class="photo-grid" id="photo-grid"></div>
+  </div>
+</section>
+  
+<section class="jcard" aria-labelledby="h-wrap">
+  <div class="jhead"><div class="jnum" aria-hidden="true">5</div><div><h2><span id="h-wrap">Before we wrap up</span></h2><p>One last question.</p></div></div>
+  <div class="jstack">
+    <div class="jfield "><label for="hear-about-us-select">How did you hear about us? <span class="req" aria-hidden="true">*</span></label><select id="hear-about-us-select" name="hear_about_us" required><option value="">Select an option</option><option>Meetup</option><option>Instagram</option><option>LinkedIn</option><option>Facebook</option><option>Google search</option><option>Referral from a friend</option><option>Referral from a member</option><option>Press / article</option><option>An event we hosted</option><option value="Other">Other (please specify)</option></select></div>
+    <div class="other-field" id="hear-about-us-other-field"><input type="text" name="hear_about_us_other" placeholder="Please specify" aria-label="How else did you hear about us" required></div>
+  </div>
+</section>
+  
+<section class="jcard" aria-labelledby="h-consent">
+  <div class="jhead"><div class="jnum" aria-hidden="true">6</div><div><h2><span id="h-consent">Consent &amp; contact details</span></h2><p>Please review and confirm before submitting your profile.</p></div></div>
+  <p class="consent-intro">The information you share helps us build a well-matched community around you - whether that is friendships, mentorship, or events. The Professional Singles Network is operated by Sparked Connection Ltd. Your information is treated with discretion and used only for the purposes you have told us matter to you.</p>
+  <div class="consent-list">
+    <label class="jchk"><input type="checkbox" name="consent_accurate" required><span>I confirm that the information I have provided is accurate and truthful to the best of my knowledge. <span class="req" aria-hidden="true">*</span></span></label>
+    <label class="jchk"><input type="checkbox" name="consent_use" required><span>I understand that my responses will be used to help facilitate the connections I have expressed interest in, including review by AI-assisted tools and our team. <span class="req" aria-hidden="true">*</span></span></label>
+    <label class="jchk"><input type="checkbox" name="consent_sensitive" required><span>I understand that some of the information I choose to share (for example any dietary or access needs) may be considered special category data under UK GDPR, and I explicitly consent to its use for the purposes described in this form. <span class="req" aria-hidden="true">*</span></span></label>
+    <label class="jchk"><input type="checkbox" name="consent_privacy_terms" required><span>I have read the <a href="https://www.singles-network.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a> and <a href="https://www.singles-network.com/terms-conditions" target="_blank" rel="noopener">Terms &amp; Conditions</a>. <span class="req" aria-hidden="true">*</span></span></label>
+    <label class="jchk"><input type="checkbox" name="consent_code_of_conduct" required><span>I agree to treat other members with respect and to follow the member conduct rules in the Terms &amp; Conditions - online, at events, and in any mentorship. <span class="req" aria-hidden="true">*</span></span></label>
+    <div class="conditional" id="consent-directory-item"><label class="jchk"><input type="checkbox" name="consent_directory_visibility" required><span>I understand that, as a community member, limited profile details (for example my first name, profession and photo) may be visible to other vetted members within the private network for the purposes of friendship, mentorship and events. <span class="req" aria-hidden="true">*</span></span></label></div>
+    <div class="conditional" id="consent-mentorship-item"><label class="jchk"><input type="checkbox" name="consent_mentorship_sharing" required><span>If I am matched as a mentor or mentee, I consent to relevant professional background being shared with my mentorship match, and I agree to keep mentorship conversations confidential. <span class="req" aria-hidden="true">*</span></span></label></div>
+    <div class="conditional" id="consent-events-liability-item"><label class="jchk"><input type="checkbox" name="consent_events_liability" required><span>I understand that I attend any in-person events, workshops or socials at my own risk, and that the Network and Sparked Connection Ltd are not liable for loss, injury or damage arising from my attendance, except where caused by our negligence or where liability cannot lawfully be excluded. <span class="req" aria-hidden="true">*</span></span></label></div>
+    <div class="conditional" id="consent-event-photos-item"><label class="jchk"><input type="checkbox" name="consent_event_photos"><span>I am happy for the Network to take photos or video at events I attend and use them for marketing purposes (for example social media, website and newsletters). <span class="opt">(Optional - you can withdraw this at any time)</span></span></label></div>
+    <label class="jchk"><input type="checkbox" name="consent_marketing_comms"><span>I would like to receive occasional emails about new events, workshops and community updates from the Network. <span class="opt">(Optional - you can unsubscribe at any time)</span></span></label>
+  </div>
+  <p class="consent-withdraw">You may withdraw your consent at any time by contacting us at <a href="mailto:hello@sparkedconnection.com">hello@sparkedconnection.com</a>.</p>
+
+  <div class="jgroup" style="margin-top:34px;">Your contact details</div>
+  <div class="jgrid">
+    <div class="jfield "><label for="email">Email address <span class="req" aria-hidden="true">*</span></label><input type="email" id="email" name="fi-sender-email" placeholder="Email" required autocomplete="email"></div>
+    <div class="jfield">
+      <label for="phone">Mobile number <span class="req" aria-hidden="true">*</span></label>
+      <div style="display:flex;gap:10px;">
+        <select name="fi-select-countryCode" id="country-code" aria-label="Country code" required style="max-width:140px;">
+          <option value="+44">🇬🇧 +44</option><option value="+1">🇺🇸 +1</option><option value="+33">🇫🇷 +33</option>
+          <option value="+49">🇩🇪 +49</option><option value="+48">🇵🇱 +48</option><option value="+34">🇪🇸 +34</option><option value="+39">🇮🇹 +39</option>
+        </select>
+        <input type="tel" id="phone" name="fi-text-phoneLocal" placeholder="e.g. 7784939929" required style="flex:1;" autocomplete="tel-national" inputmode="tel">
+      </div>
+      <p class="hint">Enter your number without the leading 0. For example: 7784939929</p>
+    </div>
+  </div>
+  <div class="consent-legal">
+    <a href="https://www.singles-network.com/terms-conditions" target="_blank" rel="noopener">Terms &amp; Conditions</a>
+    <a href="https://www.singles-network.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+  </div>
+</section>
+  
+<div class="jsubmit">
+  <h2>Ready to join the Network?</h2>
+  <p id="submit-timing-msg">Thank you for submitting your profile - we&rsquo;ll be in touch within 1-3 business days.</p>
+  <div class="cf-turnstile" data-sitekey="0x4AAAAAAExsZ2hUtz55GptX"></div>
+  <button type="submit" class="submit-btn" id="submit-btn">Submit my profile
+    <svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="18"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+  </button>
+</div>
+</form>
+<div class="jsuccess" id="success-screen" aria-live="polite" tabindex="-1">
+  <div class="tick" aria-hidden="true">✓</div>
+  <h2>Welcome - your profile has been submitted</h2>
+  <p>Thank you - we have received your details and will be in touch within 1-3 business days.</p>
+  <p>Please add <strong>hello@sparkedconnection.com</strong> to your safe senders list so our emails reach you.</p>
+  <a class="back join-btn" href="/">Back to the Network</a>
+</div>
+</main>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<script>
+(function () {
+  'use strict';
+
+  /* ─────────────────────────────────────────────────────────────
+     CONFIG - same channels as the Sparked Connection questionnaire,
+     the Dobrani (Polish Matchmaker) form and The Decided, so every
+     submission lands in the same inbox / CRM / sheet. To fully
+     separate the Singles Network, create new FormBold / Formspree /
+     Sheet endpoints and swap the URLs below.
+     ───────────────────────────────────────────────────────────── */
+  var CONFIG = {
+    BRAND: 'Professional Singles Network',
+    SUBJECT: 'New Singles Network Member Profile',
+    FORM_SOURCE: 'Singles Network Join Form (singles-network.com/join)',
+    FORMBOLD: 'https://formbold.com/s/3Omwk',
+    FORMSPREE: 'https://formspree.io/f/xojynjke',
+    FORMSUBMIT: 'https://formsubmit.co/ajax/hello@sparkedconnection.com',
+    CRM: 'https://sparked-connection-crm.vercel.app/api/intake',
+    CRM_PHOTOS: 'https://sparked-connection-crm.vercel.app/api/intake/photos',
+    SHEETS: 'https://script.google.com/macros/s/AKfycbyKrKHx4wZKvW-Xu7QLcH7Wc9H1WrOEVKdMR4iF_NrBJ7vJQjmqAieNV9JWISVxorhq/exec'
+  };
+  var MIN_AGE = 27;
+  var MAX_PHOTOS = 4;
+  var MAX_FILE_SIZE_MB = 5; // FormBold per-file cap
+  var FORM_RENDERED_AT = Date.now(); // CRM rejects implausibly fast submissions
+
+  var form = document.getElementById('questionnaire');
+  if (!form) return;
+  var errorSummary = document.getElementById('form-error-summary');
+  var submitBtn = document.getElementById('submit-btn');
+  var SUBMIT_HTML = submitBtn.innerHTML;
+  var $ = function (id) { return document.getElementById(id); };
+
+  /* ── generic helpers ── */
+  function toggle(id, show) { var el = $(id); if (el) el.classList.toggle('visible', !!show); }
+  function checkedValues(name) {
+    return Array.prototype.map.call(form.querySelectorAll('input[name="' + name + '"]:checked:not(:disabled)'), function (i) { return i.value; });
+  }
+  function radioValue(name) {
+    var r = form.querySelector('input[name="' + name + '"]:checked'); return r ? r.value : '';
+  }
+  // Disable every control inside a hidden conditional block so hidden answers are never
+  // submitted and hidden required fields never block the form.
+  function syncDisabled() {
+    form.querySelectorAll('.conditional input, .conditional select, .conditional textarea, .other-field input, .other-field select, .other-field textarea').forEach(function (inp) {
+      var hidden = false;
+      for (var p = inp.parentElement; p && p !== form; p = p.parentElement) {
+        if (p.matches('.conditional, .other-field') && !p.classList.contains('visible')) { hidden = true; break; }
+      }
+      if (hidden && inp.disabled === false) { if (inp.type === 'checkbox' || inp.type === 'radio') inp.checked = false; else inp.value = ''; }
+      inp.disabled = hidden;
+    });
+  }
+  function wireSelectOther(selectId, fieldId) {
+    var s = $(selectId); if (!s) return;
+    s.addEventListener('change', function () { toggle(fieldId, s.value === 'Other'); syncDisabled(); });
+  }
+  wireSelectOther('mentorship-receiving-select', 'mentorship-receiving-other-field');
+  wireSelectOther('mentorship-giving-select', 'mentorship-giving-other-field');
+  wireSelectOther('profession-level', 'profession-level-other-field');
+  wireSelectOther('hear-about-us-select', 'hear-about-us-other-field');
+  var wsOther = $('workshop-other-cb');
+  if (wsOther) wsOther.addEventListener('change', function () { toggle('workshop-other-field', wsOther.checked); syncDisabled(); });
+  var workLoc = $('work-location-select');
+  if (workLoc) workLoc.addEventListener('change', function () {
+    toggle('office-location-field', workLoc.value === 'Hybrid (mix of office and home)' || workLoc.value === 'Fully office-based'); syncDisabled();
+  });
+
+  /* ── what are you looking for → which blocks appear ── */
+  var MIN_PHOTOS = 1;
+  function updateVisibility() {
+    var v = checkedValues('looking_for');
+    var notSure = v.indexOf('Not sure yet') > -1;
+    var wantsFriendship = v.indexOf('Friendship & Community') > -1;
+    var wantsMentorship = v.indexOf('Mentorship') > -1 || notSure;
+    var wantsEvents = v.indexOf('Events & Workshops') > -1 || notSure;
+    var wantsIntro = false;
+    var wantsCommunity = wantsFriendship || wantsMentorship || wantsEvents;
+
+    toggle('mentorship-details', wantsMentorship);
+    var role = radioValue('mentorship_role');
+    toggle('mentorship-receiving-field', wantsMentorship && (role === 'A mentor for me' || role === 'Both' || role === 'Not sure yet'));
+    toggle('mentorship-giving-field', wantsMentorship && (role === 'To mentor others' || role === 'Both'));
+    toggle('events-details', wantsEvents);
+    toggle('section-introductions', wantsIntro);
+    toggle('consent-directory-item', wantsCommunity);
+    toggle('consent-mentorship-item', wantsMentorship);
+    toggle('consent-events-liability-item', wantsEvents);
+    toggle('consent-event-photos-item', wantsEvents);
+    toggle('consent-matchmaking-item', wantsIntro);
+    toggle('consent-matchmaking-sharing-item', wantsIntro);
+
+    var lvl = $('profession-level');
+    toggle('business-details-field', lvl && lvl.value === 'Entrepreneur / Business owner');
+    toggle('profession-level-other-field', lvl && lvl.value === 'Other');
+    var ms = $('mentorship-receiving-select'), mg = $('mentorship-giving-select'), ws = $('workshop-other-cb'), ha = $('hear-about-us-select');
+    toggle('mentorship-receiving-other-field', ms && ms.value === 'Other' && $('mentorship-receiving-field').classList.contains('visible'));
+    toggle('mentorship-giving-other-field', mg && mg.value === 'Other' && $('mentorship-giving-field').classList.contains('visible'));
+    toggle('workshop-other-field', ws && ws.checked && $('events-details').classList.contains('visible'));
+    toggle('hear-about-us-other-field', ha && ha.value === 'Other');
+    syncDisabled();
+
+    MIN_PHOTOS = wantsIntro ? 2 : 1;
+    updatePhotoRequirement();
+  }
+  form.querySelectorAll('input[name="looking_for"], input[name="mentorship_role"], #friendship-only').forEach(function (i) { i.addEventListener('change', updateVisibility); });
+  var lvlSel = $('profession-level'); if (lvlSel) lvlSel.addEventListener('change', updateVisibility);
+  var haSel = $('hear-about-us-select'); if (haSel) haSel.addEventListener('change', updateVisibility);
+
+  /* ── date of birth → age + eligibility ── */
+  var dob = $('dob-input'), ageOut = $('age-display');
+  (function () { var t = new Date(); dob.max = t.toISOString().slice(0, 10); })();
+  function ageFromDob() {
+    if (!dob.value) return null;
+    var d = new Date(dob.value); if (isNaN(d.getTime())) return null;
+    var t = new Date(), a = t.getFullYear() - d.getFullYear();
+    if (t.getMonth() < d.getMonth() || (t.getMonth() === d.getMonth() && t.getDate() < d.getDate())) a--;
+    return a;
+  }
+  function showAge() { var a = ageFromDob(); ageOut.value = (a !== null && a >= 0 && a < 120) ? a + ' years old' : ''; }
+  dob.addEventListener('change', showAge); dob.addEventListener('input', showAge);
+
+  /* ── validation ── */
+  function showErrorSummary(msg) { errorSummary.textContent = msg; errorSummary.classList.add('visible'); }
+  function hideErrorSummary() { errorSummary.classList.remove('visible'); }
+  function clearMarks() {
+    form.querySelectorAll('.required-missing').forEach(function (e) { e.classList.remove('required-missing'); e.removeAttribute('aria-invalid'); });
+    form.querySelectorAll('.field-error-message').forEach(function (e) { e.remove(); });
+  }
+  function addMsg(container, msg) {
+    if (!container) return;
+    var next = container.classList.contains('jchk') ? container.nextElementSibling : container.querySelector('.field-error-message');
+    if (next && next.classList && next.classList.contains('field-error-message')) return;
+    var m = document.createElement('div'); m.className = 'field-error-message'; m.textContent = msg; m.setAttribute('role', 'alert');
+    if (container.classList.contains('jchk')) container.insertAdjacentElement('afterend', m); else container.appendChild(m);
+  }
+  function groupOf(input) { return input.closest('fieldset.jfield, .jfield, .jchk') || input.parentElement; }
+  function markGroup(input, msg) { var c = groupOf(input); if (c) { c.classList.add('required-missing'); addMsg(c, msg); } }
+  function markInput(input, msg) {
+    input.classList.add('required-missing'); input.setAttribute('aria-invalid', 'true');
+    addMsg(input.closest('.jfield') || input.parentElement, msg);
+  }
+
+  function validateRequired() {
+    var ok = true, seen = {};
+    form.querySelectorAll('[required]').forEach(function (inp) {
+      if (inp.disabled) return;
+      if (inp.type === 'checkbox') { if (!inp.checked) { ok = false; markGroup(inp, 'Please confirm this before we send your profile.'); } return; }
+      if (inp.type === 'radio') {
+        if (seen[inp.name]) return; seen[inp.name] = 1;
+        if (!form.querySelector('input[type="radio"][name="' + inp.name + '"]:checked')) { ok = false; markGroup(inp, 'Please choose the option that feels closest.'); }
+        return;
+      }
+      if (!inp.value || !inp.value.trim()) { ok = false; markInput(inp, 'Please add this detail before continuing.'); return; }
+      if (inp.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(inp.value.trim())) { ok = false; markInput(inp, 'Please enter a valid email address so we can contact you.'); }
+    });
+    // phone sanity
+    var ph = $('phone');
+    if (ph && !ph.disabled && ph.value.trim()) {
+      var digits = ph.value.replace(/\D/g, '').replace(/^0+/, '');
+      if (digits.length < 6 || digits.length > 12) { ok = false; markInput(ph, 'Please check your mobile number - enter it without the leading 0.'); }
+    }
+    // age
+    var a = ageFromDob();
+    if (dob.value) {
+      if (a === null || a < 0 || a > 110) { ok = false; markInput(dob, 'Please enter a valid date of birth.'); }
+      else if (a < MIN_AGE) { ok = false; markInput(dob, 'Membership is open to people aged ' + MIN_AGE + ' and over.'); }
+    }
+    // preferred age range
+    var mn = $('pref-age-min'), mx = $('pref-age-max');
+    if (mn && mx && !mn.disabled && mn.value && mx.value && Number(mn.value) > Number(mx.value)) { ok = false; markInput(mx, 'The maximum age should be higher than the minimum.'); }
+    return ok;
+  }
+  function validateLookingFor() {
+    if (checkedValues('looking_for').length) return true;
+    var g = $('looking-for-group'); g.classList.add('required-missing'); addMsg(g, 'Please select at least one option so we know how to help.');
+    return false;
+  }
+  function validatePhotos() {
+    if (selectedPhotos.length >= MIN_PHOTOS) return true;
+    var f = $('photo-field'); f.classList.add('required-missing');
+    addMsg(f, 'Please upload at least ' + MIN_PHOTOS + ' photo' + (MIN_PHOTOS > 1 ? 's' : '') + ' before submitting.');
+    return false;
+  }
+  function scrollToFirstError() {
+    var first = form.querySelector('.required-missing');
+    var target = first || errorSummary;
+    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    var focusable = first && (first.matches('input,select,textarea') ? first : first.querySelector('input,select,textarea,button'));
+    if (focusable) { try { focusable.focus({ preventScroll: true }); } catch (e) {} }
+  }
+
+  /* ── photos ── */
+  var selectedPhotos = [];
+  var photoInput = $('photo-upload'), photoGrid = $('photo-grid'), photoMeta = $('photo-meta'), uploadBox = $('upload-box');
+  var uploadSub = uploadBox.querySelector('.upload-sub');
+  uploadBox.addEventListener('click', function () { photoInput.click(); });
+
+  function compressImageFile(file, maxBytes, maxDim) {
+    maxDim = maxDim || 2000;
+    return new Promise(function (resolve) {
+      var url = URL.createObjectURL(file), img = new Image();
+      img.onload = function () {
+        try {
+          var w = img.width, h = img.height; if (!w || !h) { URL.revokeObjectURL(url); return resolve(null); }
+          if (w > maxDim || h > maxDim) { var sc = maxDim / Math.max(w, h); w = Math.round(w * sc); h = Math.round(h * sc); }
+          var c = document.createElement('canvas'); c.width = w; c.height = h; c.getContext('2d').drawImage(img, 0, 0, w, h);
+          var q = 0.85;
+          (function step() {
+            c.toBlob(function (blob) {
+              if (blob && blob.size > maxBytes && q > 0.35) { q -= 0.15; return step(); }
+              URL.revokeObjectURL(url);
+              if (!blob || blob.size > maxBytes) return resolve(null);
+              resolve(new File([blob], file.name.replace(/\.[^.]+$/, '') + '.jpg', { type: 'image/jpeg', lastModified: Date.now() }));
+            }, 'image/jpeg', q);
+          })();
+        } catch (e) { URL.revokeObjectURL(url); resolve(null); }
+      };
+      img.onerror = function () { URL.revokeObjectURL(url); resolve(null); };
+      img.src = url;
+    });
+  }
+  function updatePhotoRequirement() {
+    uploadSub.textContent = 'Minimum ' + MIN_PHOTOS + ' photo' + (MIN_PHOTOS > 1 ? 's' : '') + ' required · Up to ' + MAX_PHOTOS + ' photos · JPEG or PNG · large photos are resized automatically';
+    updatePhotoMeta();
+  }
+  function updatePhotoMeta() {
+    var n = selectedPhotos.length;
+    if (n === 0) photoMeta.innerHTML = 'No photos uploaded yet – <strong>minimum ' + MIN_PHOTOS + ' required</strong>.';
+    else if (n < MIN_PHOTOS) photoMeta.innerHTML = '<strong>' + n + ' of ' + MAX_PHOTOS + '</strong> photos added – add at least ' + (MIN_PHOTOS - n) + ' more to continue.';
+    else photoMeta.innerHTML = '<strong>' + n + ' of ' + MAX_PHOTOS + '</strong> photos added' + (n >= MAX_PHOTOS ? ' – maximum reached' : '. Looking great!');
+    if (n >= MIN_PHOTOS) { var f = $('photo-field'); f.classList.remove('required-missing'); var e = f.querySelector('.field-error-message'); if (e) e.remove(); }
+  }
+  function renderPhotoGrid() {
+    photoGrid.innerHTML = '';
+    selectedPhotos.forEach(function (file, i) {
+      var url = URL.createObjectURL(file), t = document.createElement('div'); t.className = 'photo-thumb';
+      var img = document.createElement('img'); img.src = url; img.alt = 'Photo ' + (i + 1) + ' preview';
+      var b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', 'Remove photo ' + (i + 1)); b.innerHTML = '&times;';
+      b.addEventListener('click', function () { selectedPhotos.splice(i, 1); renderPhotoGrid(); updatePhotoMeta(); });
+      var l = document.createElement('span'); l.textContent = i === 0 ? 'Face photo' : i === 1 ? 'Full-length' : 'Lifestyle';
+      t.appendChild(img); t.appendChild(b); t.appendChild(l); photoGrid.appendChild(t);
+    });
+    uploadBox.style.display = selectedPhotos.length >= MAX_PHOTOS ? 'none' : '';
+  }
+  photoInput.addEventListener('change', async function () {
+    var incoming = Array.prototype.slice.call(photoInput.files || []), maxBytes = MAX_FILE_SIZE_MB * 1024 * 1024;
+    var oversized = [], resized = [];
+    for (var k = 0; k < incoming.length; k++) {
+      var file = incoming[k];
+      if (!/^image\//.test(file.type) && !/\.(jpe?g|png|webp|heic|heif)$/i.test(file.name)) { oversized.push(file.name); continue; }
+      if (file.size > maxBytes) {
+        var shrunk = await compressImageFile(file, maxBytes);
+        if (shrunk) { file = shrunk; resized.push(incoming[k].name); } else { oversized.push(incoming[k].name); continue; }
+      }
+      var dup = selectedPhotos.some(function (f) { return f.name === file.name && f.size === file.size; });
+      if (!dup && selectedPhotos.length < MAX_PHOTOS) selectedPhotos.push(file);
+    }
+    photoInput.value = '';
+    renderPhotoGrid(); updatePhotoMeta();
+    var f = $('photo-field');
+    f.querySelectorAll('.field-info-message,.field-error-message').forEach(function (e) { e.remove(); });
+    if (oversized.length) addMsg(f, (oversized.length === 1 ? 'This file could not be added' : 'These files could not be added') + ' (too large even after resizing, or not an image): ' + oversized.join(', ') + '.');
+    else if (resized.length) { var m = document.createElement('div'); m.className = 'field-info-message'; m.textContent = (resized.length === 1 ? 'One photo was' : resized.length + ' photos were') + ' automatically resized to fit the ' + MAX_FILE_SIZE_MB + 'MB limit - no action needed.'; f.appendChild(m); }
+  });
+
+  /* ── submission channels ── */
+  function formDataToObject(fd) {
+    var o = {}; fd.forEach(function (v, k) {
+      if (o[k] !== undefined) { if (!Array.isArray(o[k])) o[k] = [o[k]]; o[k].push(v); } else o[k] = v;
+    }); return o;
+  }
+  function normalise(d) {
+    var local = (d['fi-text-phoneLocal'] || '').replace(/\D/g, '').replace(/^0+/, '');
+    return Object.assign({}, d, {
+      _subject: CONFIG.SUBJECT,
+      _replyto: d['fi-sender-email'] || '',
+      name: ((d.first_name || '') + ' ' + (d.last_name || '')).trim(),
+      email: d['fi-sender-email'] || '',
+      phone: ((d['fi-select-countryCode'] || '') + ' ' + local).trim(),
+      formType: 'Full Questionnaire',
+      form_source: CONFIG.FORM_SOURCE,
+      brand: CONFIG.BRAND,
+      pageUrl: window.location.href,
+      submittedAt: new Date().toISOString()
+    });
+  }
+  function joinVal(v) { return Array.isArray(v) ? v.join(', ') : (v == null ? '' : String(v)); }
+
+  // FormBold: needs a genuine native multipart POST; each photo in its own uniquely-named file field.
+  function submitToFormBold(p, photos) {
+    return new Promise(function (resolve) {
+      var frame = $('formbold-native-frame');
+      if (!frame) { frame = document.createElement('iframe'); frame.name = frame.id = 'formbold-native-frame'; frame.title = 'Hidden form submission frame'; frame.style.display = 'none'; document.body.appendChild(frame); }
+      var t = document.createElement('form'); t.action = CONFIG.FORMBOLD; t.method = 'POST'; t.enctype = 'multipart/form-data'; t.target = frame.name; t.style.display = 'none';
+      Object.keys(p).forEach(function (k) { var i = document.createElement('input'); i.type = 'hidden'; i.name = k; i.value = joinVal(p[k]); t.appendChild(i); });
+      photos.forEach(function (file, i) {
+        var fi = document.createElement('input'); fi.type = 'file'; fi.name = 'upload_' + (i + 1);
+        var dt = new DataTransfer(); dt.items.add(file); fi.files = dt.files; t.appendChild(fi);
+      });
+      document.body.appendChild(t);
+      var done = false; function fin() { if (done) return; done = true; setTimeout(function () { t.remove(); }, 1000); resolve(true); }
+      frame.addEventListener('load', fin, { once: true }); setTimeout(fin, 6000);
+      t.submit();
+    });
+  }
+  function submitToFormspree(p) {
+    var b = new URLSearchParams(); Object.keys(p).forEach(function (k) { b.append(k, joinVal(p[k])); });
+    b.append('full_raw_submission', JSON.stringify(p));
+    return fetch(CONFIG.FORMSPREE, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8', 'Accept': 'application/json' }, body: b.toString() })
+      .then(function (r) { if (!r.ok) throw new Error('Formspree ' + r.status); return true; });
+  }
+  function submitToFormSubmit(p) {
+    return fetch(CONFIG.FORMSUBMIT, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ _subject: 'Backup: ' + CONFIG.SUBJECT, _captcha: 'false', name: p.name, email: p.email, phone: p.phone, message: JSON.stringify(p, null, 2) }) })
+      .then(function (r) { if (!r.ok) throw new Error('FormSubmit ' + r.status); return true; });
+  }
+  function submitToSheets(p) {
+    return fetch(CONFIG.SHEETS, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' }, body: new URLSearchParams({ payload: JSON.stringify(p) }).toString() })
+      .then(function () { return true; });
+  }
+  async function submitToCRM(p, photos) {
+    var tokenEl = document.querySelector('[name="cf-turnstile-response"]');
+    var body = Object.assign({}, p, { turnstile_token: tokenEl ? tokenEl.value : '', form_rendered_at: FORM_RENDERED_AT, brand: CONFIG.BRAND });
+    var res = await fetch(CONFIG.CRM, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+    if (!res.ok) throw new Error('CRM ' + res.status);
+    var j = {}; try { j = await res.json(); } catch (e) {}
+    if (photos.length && j.id) {
+      var pf = new FormData(); pf.append('client_id', j.id); pf.append('upload_token', j.upload_token || '');
+      photos.forEach(function (f) { pf.append('file', f); });
+      try { await fetch(CONFIG.CRM_PHOTOS, { method: 'POST', body: pf }); } catch (e) { console.error('CRM photo upload failed', e); }
+    }
+    return true;
+  }
+  async function attempt(fn) { try { return await fn(); } catch (e) { console.error(e); return false; } }
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault(); hideErrorSummary(); clearMarks();
+    var a = validateRequired(), b = validateLookingFor(), c = validatePhotos();
+    if (!(a && b && c)) { showErrorSummary('Almost there - a few highlighted details are still needed before we can submit your profile.'); scrollToFirstError(); return; }
+
+    var fd = new FormData(form);
+    var honeypot = (fd.get('website') || '').toString();
+    fd.delete('website');
+    var raw = formDataToObject(fd);
+    raw.photos_uploaded = selectedPhotos.length ? selectedPhotos.length + ' photo(s): ' + selectedPhotos.map(function (f) { return f.name; }).join(', ') : 'No photos uploaded';
+    var payload = normalise(raw);
+
+    submitBtn.disabled = true; submitBtn.textContent = 'Securely submitting…';
+    var ok = false;
+    if (honeypot) { ok = true; } // a bot filled the hidden field: pretend success, send nothing
+    else {
+      var r = { fb: false, fs: false, fsub: false, crm: false, sheets: false };
+      r.fb = await attempt(function () { return submitToFormBold(payload, selectedPhotos); });
+      r.fs = await attempt(function () { return submitToFormspree(payload); });
+      if (!r.fb && !r.fs) r.fsub = await attempt(function () { return submitToFormSubmit(payload); });
+      r.crm = await attempt(function () { return submitToCRM(payload, selectedPhotos); });
+      r.sheets = await attempt(function () { return submitToSheets(payload); });
+      window.__snSubmitResults = r; // handy when testing in the browser console
+      ok = r.fb || r.fs || r.fsub || r.crm || r.sheets;
+    }
+    if (!ok) {
+      showErrorSummary('Sorry, the form could not be submitted. Please try again, or email hello@sparkedconnection.com directly.');
+      submitBtn.disabled = false; submitBtn.innerHTML = SUBMIT_HTML; return;
+    }
+    form.style.display = 'none';
+    var s = $('success-screen'); s.classList.add('show'); s.focus({ preventScroll: true });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    try { if (typeof window.gtag === 'function') window.gtag('event', 'generate_lead', { form_id: 'singles_network_join' }); } catch (err) {}
+  });
+
+  syncDisabled();
+  updateVisibility();
+})();
+
+</script>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>The Professional <span>Singles Network</span></h3>
+      <p>A private community for ambitious professionals to grow, connect, and build.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="/#overview">Overview</a></li>
+        <li><a href="/#events">Events</a></li>
+        <li><a href="/#intro-call">How It Works</a></li>
+        <li><a href="/#faq">FAQ</a></li>
+        <li><a href="/join">Apply to Join</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="https://www.singles-network.com/terms-conditions">Terms &amp; Conditions</a></li>
+        <li><a href="https://www.singles-network.com/privacy-policy">Privacy Policy</a></li>
+        <li><a href="https://www.singles-network.com/accessibility">Accessibility</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 The Professional Singles Network. All rights reserved.</p>
+    <p>GDPR Compliant &bull; United Kingdom</p>
+  </div>
+</footer>
+</body>
+</html>
