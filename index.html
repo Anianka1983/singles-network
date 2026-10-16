@@ -399,8 +399,8 @@
 
   /* HOW IT WORKS - colourful step-flow diagram */
   .flow-diagram{
-    position:relative; max-width:1120px; margin:0 auto; display:grid;
-    grid-template-columns:repeat(5, 1fr); gap:14px; align-items:start; padding-top:6px;
+    position:relative; max-width:900px; margin:0 auto; display:grid;
+    grid-template-columns:repeat(3, 1fr); gap:28px; align-items:start; padding-top:6px;
   }
   .flow-step{
     position:relative; text-align:center; padding:30px 14px 22px; border-radius:16px;
@@ -774,6 +774,41 @@
     .sc-btn{ flex:1; text-align:center; }
     #sc-cookie-manage-link{ width:34px; height:34px; left:.75rem; bottom:.75rem; font-size:.9rem; }
   }
+
+  /* Optional relationship introductions - deliberately understated */
+  .hero-note.hero-why{ margin-top:16px; margin-bottom:28px; }
+  .hero-note{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.12rem; color:rgba(255,255,255,.8); margin-top:18px; max-width:560px; margin-left:auto; margin-right:auto; line-height:1.5; }
+  .inside-row .tag.tag-opt{ background:transparent; border:1px solid var(--gold); color:#9a6b27; }
+  .inside-row-optional .n{ color:var(--rose); }
+  .inside-row-optional p{ font-style:italic; }
+  .duo-check-list li.duo-optional{ font-style:italic; opacity:.85; }
+
+  /* Inside the Network - card layout */
+  .inside-grid{ max-width:1040px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  .ic-card{ position:relative; background:var(--cream); border:1px solid #efe5da; border-radius:20px; padding:26px 24px 24px; box-shadow:0 10px 26px rgba(30,49,81,.07); transition:transform .25s ease, box-shadow .25s ease; overflow:hidden; text-align:left; }
+  .ic-card::before{ content:""; position:absolute; left:0; right:0; top:0; height:5px; background:var(--accent,var(--navy)); }
+  .ic-c0{ --accent:var(--navy); } .ic-c1{ --accent:var(--rose); } .ic-c2{ --accent:var(--gold); } .ic-c3{ --accent:var(--plum); }
+  .ic-card:hover{ transform:translateY(-6px) rotate(-.6deg); box-shadow:0 18px 36px rgba(30,49,81,.14); }
+  .ic-card:nth-child(even):hover{ transform:translateY(-6px) rotate(.6deg); }
+  .ic-top{ display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; }
+  .ic-icon{ width:52px; height:52px; border-radius:16px; background:#fff; display:flex; align-items:center; justify-content:center; font-size:1.55rem; box-shadow:0 4px 12px rgba(30,49,81,.1); border:2px solid var(--accent,var(--navy)); transform:rotate(-6deg); transition:transform .25s ease; }
+  .ic-card:hover .ic-icon{ transform:rotate(6deg) scale(1.08); }
+  .ic-n{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:2.1rem; line-height:1; color:var(--accent,var(--gold)); opacity:.55; }
+  .ic-card h4{ font-family:'Cormorant Garamond',serif; font-size:1.35rem; font-weight:700; line-height:1.2; color:var(--navy); margin:0 0 8px; }
+  .ic-tag{ display:inline-block; background:#F3E7DC; color:var(--navy); font-family:'Josefin Sans',sans-serif; font-size:.62rem; letter-spacing:.1em; text-transform:uppercase; padding:4px 11px; border-radius:999px; margin-bottom:10px; }
+  .ic-tag-opt{ background:transparent; border:1px solid var(--gold); color:#9a6b27; }
+  .ic-card p{ font-size:.9rem; line-height:1.6; color:var(--ink); margin:0; }
+  .ic-soon{ background:repeating-linear-gradient(135deg,#fdf9f5,#fdf9f5 12px,#fbf3ea 12px,#fbf3ea 24px); border-style:dashed; border-color:var(--gold); }
+  .ic-optional{ background:#fff; border:2px dashed var(--rose); }
+  .ic-optional::before{ background:var(--rose); }
+  .ic-optional p{ font-style:italic; }
+  @media (max-width:900px){ .inside-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:600px){ .inside-grid{ grid-template-columns:1fr; gap:16px; } .ic-card:hover,.ic-card:nth-child(even):hover{ transform:none; } }
+  .inside-grid{ display:flex; flex-wrap:wrap; justify-content:center; }
+  .inside-grid .ic-card{ width:calc((100% - 44px)/3); box-sizing:border-box; }
+  @media (max-width:900px){ .inside-grid .ic-card{ width:calc((100% - 22px)/2); } }
+  @media (max-width:600px){ .inside-grid .ic-card{ width:100%; } }
+  @media (prefers-reduced-motion:reduce){ .ic-card,.ic-icon{ transition:none; } .ic-card:hover{ transform:none; } }
 </style>
 
   <style id="sc-event-banner-styles">
@@ -1016,16 +1051,17 @@
     </span>
     <br><span class="gold" style="font-size:1.05em; letter-spacing:.02em;">Singles Network</span>
   </h1>
-  <p class="sub">A private community for ambitious professionals looking to expand their social network - whether the goal is making new friends, growing a career, or building a business.</p>
+  <p class="sub">A private community for ambitious single professionals looking to expand their social network - whether the goal is making new friends, growing a career, or building a business.</p>
+  <p class="hero-note hero-why">Created for single professionals at the same stage of life &ndash; with the time and openness to build real friendships.</p>
   <div class="hero-ctas">
     <a href="https://www.sparkedconnection.com/form" class="btn-primary">Join Free →</a>
     <a href="#membership" class="btn-outline">See What's Included</a>
   </div>
   <div class="hero-trust-bar">
-    <span>Free to join</span>
-    <span>1:1 intro call with Anna</span>
-    <span>Community &amp; mentoring, free</span>
-    <span>Private &amp; discreet</span>
+    <span>Joining is 100% free</span>
+    <span>Optional 1:1 call with Anna</span>
+    <span>Only events are paid</span>
+    <span>Private Network</span>
   </div>
   </div>
 </div>
@@ -1036,10 +1072,10 @@
     <blockquote>"It's a strange kind of lonely - being surrounded by people all week and nobody to call on a Friday night."
       <span class="quote-attr">- Early Member</span>
     </blockquote>
-    <p style="text-align:center; font-size:1.1rem;">Progress rarely happens alone. It comes from the people you learn from, the ideas you swap, and the doors someone else happens to open for you - whether that's a career or a business. Opening those doors is the whole point of this network.</p>
+    <p style="text-align:center; font-size:1.1rem;">Progress rarely happens alone. It comes from the people you learn from, the ideas you swap, and the doors someone else happens to open for you - whether that's a career or a business. Collaboration, learning from each other and friendship is the whole point of this network.</p>
     <div class="paper-quote-wrap">
       <div class="paper-quote">
-        <p>I built the Professional Singles Network because I went looking for a community like this - one part friendship, one part mentorship, and one part collaboration - for people building a career and people building a business alike - and it didn't exist. So I built it.</p>
+        <p>I built the Professional Singles Network because I went looking for a community like this - one part friendship, one part mentorship, and one part collaboration - for people building a career and people building a business alike, and for people with as much time as I had - and it didn't exist. So I built it.</p>
       </div>
     </div>
     <div class="founder-attribution">
@@ -1097,6 +1133,7 @@
       <p>Fifteen years in health data and enterprise software. A career built around ambitious people - and a social life that, if I'm honest, thinned out faster than I expected.</p>
       <p>Work took up most of my time and energy, and as the years went by my circle quietly shrank. Friends moved on with their own lives, and the like-minded, ambitious people around me - the ones who'd actually understand what I was building - became harder and harder to find.</p>
       <p>What I actually craved was a community - somewhere to keep learning, exploring, and building alongside other people. I wanted a room full of people who understood the ambition <em>and</em> the isolation that can come with it - some to be friends with, some to learn from, some to build something with.</p>
+      <p>Being single has its own quiet advantage, too: more time that's genuinely your own. I wanted to create a space for people in that same place - with room in their week to make friendships with like-minded people, and maybe spend time together outside of work as well.</p>
       <p>I couldn't find a community like that, so I built it myself.</p>
       <p class="founder-sign">- Anna, Founder</p>
     </div>
@@ -1106,46 +1143,54 @@
 <section style="background:#fff;" id="workshops">
   <div class="section-eyebrow label">Inside The Network</div>
   <h2 class="section-title">Here's what's waiting for you.</h2>
-  <div class="inside-list">
-    <div class="inside-row">
-      <div class="n">01</div>
-      <div><h4>The Intro Call</h4><span class="tag">Free</span></div>
-      <p>Your way in. A relaxed 1:1 conversation with Anna about you - your career, what's missing socially, and what you're hoping to find here. No pressure, no sales pitch.</p>
+  <div class="inside-grid">
+    <div class="ic-card ic-c0">
+      <div class="ic-top"><span class="ic-icon" aria-hidden="true">👋</span><span class="ic-n">01</span></div>
+      <h4>The Intro Call</h4>
+      <span class="ic-tag">Free &amp; Optional</span>
+      <p>Your way in. A relaxed 1:1 conversation with Anna about you - your career, what's missing socially, and what you're hoping to find here. It helps to get to know you.</p>
     </div>
-    <div class="inside-row">
-      <div class="n">02</div>
-      <div><h4>Monthly Networking Calls</h4></div>
-      <p>A standing monthly Zoom session for the whole network - the kind of room where a career conversation turns into a business idea, or a stranger becomes the person who opens a door for you. Low-effort, high-value.</p>
-    </div>
-    <div class="inside-row">
-      <div class="n">03</div>
-      <div><h4>Mentor &amp; Mentee Programme</h4></div>
-      <p>Paired by experience and ambition. Bring your biggest challenge to the table. Become a mentor yourself and unlock special member privileges - enquire within.</p>
-    </div>
-    <div class="inside-row">
-      <div class="n">04</div>
-      <div><h4>Co-Working Days</h4></div>
+    <div class="ic-card ic-c1">
+      <div class="ic-top"><span class="ic-icon" aria-hidden="true">💻</span><span class="ic-n">02</span></div>
+      <h4>Co-Working Days</h4>
+      
       <p>A room full of members getting their heads down together - real work, real momentum, and a coffee break with people who get it.</p>
     </div>
-    <div class="inside-row">
-      <div class="n">05</div>
-      <div><h4>Professional Workshops</h4><span class="tag">Small Fee</span></div>
+    <div class="ic-card ic-c2">
+      <div class="ic-top"><span class="ic-icon" aria-hidden="true">🎓</span><span class="ic-n">03</span></div>
+      <h4>Professional Workshops</h4>
+      <span class="ic-tag">Small Fee</span>
       <p>AI tools for your role, business fundamentals, personal branding, negotiation, leadership, financial literacy, public speaking, and career pivots - open to everyone in the network for a small fee per session.</p>
     </div>
-    <div class="inside-row">
-      <div class="n">06</div>
-      <div><h4>Social Meet-Ups</h4></div>
+    <div class="ic-card ic-c3">
+      <div class="ic-top"><span class="ic-icon" aria-hidden="true">🥂</span><span class="ic-n">04</span></div>
+      <h4>Social Meet-Ups</h4>
+      
       <p>Pub quizzes, dinners, drinks, and casual catch-ups - the low-key ways members actually get to know each other.</p>
     </div>
-    <div class="inside-row">
-      <div class="n">07</div>
-      <div><h4>Getaway Weekends</h4></div>
+    <div class="ic-card ic-c0">
+      <div class="ic-top"><span class="ic-icon" aria-hidden="true">✈️</span><span class="ic-n">05</span></div>
+      <h4>Getaway Weekends</h4>
+      
       <p>Seasonal retreats and annual trips away with the network - open to all members, priced per trip.</p>
     </div>
-    <div class="inside-row">
-      <div class="n">08</div>
-      <div><h4>Creative &amp; Recreational Workshops</h4></div>
+    <div class="ic-card ic-c1">
+      <div class="ic-top"><span class="ic-icon" aria-hidden="true">🎨</span><span class="ic-n">06</span></div>
+      <h4>Creative &amp; Recreational Workshops</h4>
+      
       <p>Golf days, clay pigeon shooting, wine tasting, cookery classes, and pottery workshops - the kind of shared experience that turns acquaintances into friends.</p>
+    </div>
+    <div class="ic-card ic-soon ic-c2">
+      <div class="ic-top"><span class="ic-icon" aria-hidden="true">📹</span><span class="ic-n">07</span></div>
+      <h4>Monthly Networking Calls</h4>
+      <span class="ic-tag ic-tag-opt">Coming soon</span>
+      <p>A relaxed monthly Zoom session for the whole network - the kind of room where a career conversation turns into a business idea, or a stranger becomes the person who opens a door for you. Low-effort, high-value. Not live just yet - we'll let members know as soon as the first date is set.</p>
+    </div>
+    <div class="ic-card ic-soon ic-c3">
+      <div class="ic-top"><span class="ic-icon" aria-hidden="true">🤝</span><span class="ic-n">08</span></div>
+      <h4>Mentor &amp; Mentee Programme</h4>
+      <span class="ic-tag ic-tag-opt">Coming soon</span>
+      <p>Paired by experience and ambition. Bring your biggest challenge to the table. Become a mentor yourself and unlock special member privileges. Not open just yet - we&rsquo;ll let members know as soon as it is.</p>
     </div>
   </div>
   <p class="also-avail">Also available: seasonal socials, and members-only experiences.</p>
@@ -1156,8 +1201,8 @@
   <h2 class="section-title">Our Events</h2>
   <p class="section-sub">From cosy pub quizzes to exotic travel adventures, our events create the perfect environment for genuine connections. Choose experiences that match your interests.</p>
   <div class="sn-ev-facts">
-    <div class="sn-ev-fact"><span class="sn-ev-fact-k">Membership</span><strong>Free</strong><p>Belonging to the Singles Network costs nothing - no fees, ever, and no card required.</p></div>
-    <div class="sn-ev-fact"><span class="sn-ev-fact-k">Events</span><strong>Paid</strong><p>Events are priced separately, per event or per trip - and open to everyone in the network.</p></div>
+    <div class="sn-ev-fact"><span class="sn-ev-fact-k">Membership</span><strong>Free</strong><p>Joining and belonging to the Singles Network is entirely free - no fees and no card required.</p></div>
+    <div class="sn-ev-fact"><span class="sn-ev-fact-k">Events</span><strong>Paid</strong><p>The only thing you pay for is the events you choose to attend, priced per event or per trip - and open to everyone in the network.</p></div>
     <div class="sn-ev-fact"><span class="sn-ev-fact-k">Where</span><strong>London &amp; online</strong><p>Our in-person events are based in London, with online socials you can join from anywhere.</p></div>
     <div class="sn-ev-fact"><span class="sn-ev-fact-k">Stay in the loop</span><strong>Always informed</strong><p>Every member is kept posted on each in-person event, Zoom call, social and getaway trip.</p></div>
   </div>
@@ -1235,7 +1280,7 @@
 <section style="background:#fff;" id="membership">
   <div class="section-eyebrow label">Membership</div>
   <h2 class="section-title">Free to join. Free to belong.</h2>
-  <p class="section-sub">Meeting Anna costs nothing, and neither does the community itself - the mentor programme and the monthly calls are free for everyone. Workshops and in-person events are priced separately, open to all. Whether you're growing a career or a business, it's built for both.</p>
+  <p class="section-sub">Joining is entirely free - meeting Anna and the community all cost nothing. The only thing you pay for is the events you choose to attend (workshops, socials and getaway trips), priced separately and open to all. Whether you're growing a career or a business, it's built for both.</p>
 
   <div class="duo-grid duo-grid-single">
     <div class="duo-panel duo-panel-dark duo-panel-blue">
@@ -1243,7 +1288,7 @@
       <h3>It starts with getting to know you.</h3>
       <p>One membership. Everything included. No card required.</p>
       <ul class="duo-check-list">
-        <li><span class="duo-check-icon">✓</span>A 1:1 introduction call with Anna</li>
+        <li><span class="duo-check-icon">✓</span>A 1:1 introduction call with Anna (optional)</li>
         <li><span class="duo-check-icon">✓</span>She gets to know you, your goals, and what you're after</li>
         <li><span class="duo-check-icon">✓</span>Kept informed on every in-person event, Zoom call, social, and getaway trip</li>
         <li><span class="duo-check-icon">✓</span>Access to self-development &amp; business workshops (small fee)</li>
@@ -1252,7 +1297,7 @@
     </div>
   </div>
 
-  <p style="text-align:center; max-width:600px; margin:36px auto 0; font-size:.9rem; color:var(--ink);">No fees, ever. Leave anytime, no strings attached.</p>
+  <p style="text-align:center; max-width:600px; margin:36px auto 0; font-size:.9rem; color:var(--ink);">Joining is entirely free - no fees. You only pay for the events you choose to attend. Leave anytime, no strings attached.</p>
 </section>
 
 
@@ -1260,32 +1305,23 @@
 <section style="background:#fff;" id="intro-call">
   <div class="section-eyebrow label">How It Works</div>
   <h2 class="section-title">What are the steps?</h2>
-  <p class="section-sub">This is the whole reason it's free - Anna wants to know you before you decide whether this is your kind of network.</p>
+  <p class="section-sub">Joining takes one short form. Everything after that is entirely up to you.</p>
   <div class="flow-diagram">
     <a class="flow-step flow-step-link" href="https://www.sparkedconnection.com/form" target="_blank" rel="noopener noreferrer">
       <div class="flow-num">01</div>
       <h4>Complete The Questionnaire</h4>
-      <p>A quick form to start - tell us a little about yourself before the call.</p>
+      <p>A quick form to join - tell us a little about yourself. You can also let us know if you&rsquo;d like to speak with Anna.</p>
     </a>
     <div class="flow-step">
       <div class="flow-num">02</div>
       <h4>A Real Conversation</h4>
-      <p>Anna will contact you to schedule a call - 30 minutes, by Zoom or by phone.</p>
+      <span class="tag tag-opt" style="display:inline-block;margin:-4px 0 12px;padding:3px 12px;border:1px solid var(--gold);border-radius:999px;font-family:'Josefin Sans',sans-serif;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#b07a2e;">Optional</span>
+      <p>Only if you&rsquo;d like one. Anna will contact you to schedule a call - 30 minutes, by Zoom or by phone.</p>
     </div>
     <div class="flow-step">
       <div class="flow-num">03</div>
-      <h4>What You're After</h4>
-      <p>Personal development? A wider network? Mentorship? Anna asks - and takes it seriously, whatever the mix.</p>
-    </div>
-    <div class="flow-step">
-      <div class="flow-num">04</div>
-      <h4>You're In The Loop</h4>
-      <p>From there you're kept posted on every in-person and Zoom event - no obligation to pay anything.</p>
-    </div>
-    <div class="flow-step">
-      <div class="flow-num">05</div>
-      <h4>Join When Ready</h4>
-      <p>Full access to the network from day one - free, with no card required.</p>
+      <h4>You&rsquo;re In The Loop</h4>
+      <p>Once you&rsquo;ve registered, you&rsquo;ve already joined - with full access to the network from day one, free, with no card required. From there you&rsquo;re kept posted on every in-person and Zoom event.</p>
     </div>
   </div>
 </section>
@@ -1327,7 +1363,7 @@
     </details>
     <details>
       <summary>Do I have to pay to join the Singles Network?</summary>
-      <p>No - belonging to the Singles Network is free, with no card required. Events are paid: workshops carry a small fee per session, and socials and getaway trips are priced per event. Everything is open to all members.</p>
+      <p>No - joining is entirely free, with no card required, and there are no membership fees. The only thing you pay for is the events you choose to attend: workshops carry a small fee per session, and socials and getaway trips are priced per event. Everything is open to all members, and you never have to book anything.</p>
     </details>
     <details>
       <summary>What kind of workshops do you run?</summary>
@@ -1340,6 +1376,10 @@
     <details>
       <summary>What cities do you operate in?</summary>
       <p>At the moment, we are based in London. However, some of our events are online.</p>
+    </details>
+    <details>
+      <summary>Is this a dating network? Can I be introduced to someone romantically?</summary>
+      <p>The Network is first and foremost about friendship, mentorship and community - it isn&rsquo;t a dating site. That said, many members are single, and if you&rsquo;d ever like an introduction to someone with a relationship in mind, it&rsquo;s there as an option. Just tick it on the questionnaire or mention it on your intro call and Anna will talk you through how it works. It&rsquo;s entirely optional, never assumed, and has no bearing on the rest of your membership. Introductions are personal and considered - no swiping, no profiles to browse.</p>
     </details>
     <details>
       <summary>Do I need to run my own business to join?</summary>
