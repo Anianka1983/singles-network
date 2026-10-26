@@ -880,8 +880,17 @@
   }
   function normalise(d) {
     var local = (d['fi-text-phoneLocal'] || '').replace(/\D/g, '').replace(/^0+/, '');
+    var wantsMatch = !!d.sparked_connection_interest, wantsSingles = !!d.singles_events_interest;
+    var tags = ['Singles Network website'];
+    if (wantsMatch) tags.push('Matchmaking interest');
+    if (wantsSingles) tags.push('Singles events mailing list');
     return Object.assign({}, d, {
-      _subject: CONFIG.SUBJECT,
+      lead_type: wantsMatch ? 'Matchmaking enquiry' : 'Community member',
+      crm_list: wantsMatch ? 'Singles Network - Matchmaking enquiries' : 'Singles Network - Community members',
+      singles_events_optin: wantsSingles ? 'Yes' : 'No',
+      source_label: 'SINGLES NETWORK WEBSITE',
+      crm_tags: tags.join(', '),
+      _subject: wantsMatch ? CONFIG.SUBJECT + ' - MATCHMAKING INTEREST' : CONFIG.SUBJECT,
       _replyto: d['fi-sender-email'] || '',
       name: ((d.first_name || '') + ' ' + (d.last_name || '')).trim(),
       email: d['fi-sender-email'] || '',
