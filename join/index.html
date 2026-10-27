@@ -589,7 +589,7 @@
   
 <div class="jsubmit">
   <h2>Ready to join the Network?</h2>
-  <p id="submit-timing-msg">Thank you for submitting your profile - we&rsquo;ll be in touch within 1-3 business days.</p>
+  <p id="submit-timing-msg">Free to join. Your details are kept private and used only as described above.</p>
   <div class="cf-turnstile" data-sitekey="0x4AAAAAAExsZ2hUtz55GptX"></div>
   <button type="submit" class="submit-btn" id="submit-btn">Submit my profile
     <svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="18"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
@@ -599,7 +599,7 @@
 <div class="jsuccess" id="success-screen" aria-live="polite" tabindex="-1">
   <div class="tick" aria-hidden="true">✓</div>
   <h2>Welcome - your profile has been submitted</h2>
-  <p>Thank you - we have received your details and will be in touch within 1-3 business days.</p>
+  <p id="success-msg">Thank you - you are now part of the Network. We will keep you posted with community updates by email.</p>
   <p>Please add <strong>hello@sparkedconnection.com</strong> to your safe senders list so our emails reach you.</p>
   <a class="back join-btn" href="/">Back to the Network</a>
 </div>
@@ -980,6 +980,12 @@
       showErrorSummary('Sorry, the form could not be submitted. Please try again, or email hello@sparkedconnection.com directly.');
       submitBtn.disabled = false; submitBtn.innerHTML = SUBMIT_HTML; return;
     }
+    // Only promise a follow-up if they asked for the 1:1 chat.
+    var wantsChat = /^yes/i.test((payload.wants_intro_call || raw.wants_intro_call || '').toString());
+    var sm = $('success-msg');
+    if (sm) sm.textContent = wantsChat
+      ? 'Thank you - we have received your details and will be in touch within 1-3 business days to arrange your chat with Anna.'
+      : 'Thank you - you are now part of the Network. We will keep you posted with community updates by email.';
     form.style.display = 'none';
     var s = $('success-screen'); s.classList.add('show'); s.focus({ preventScroll: true });
     window.scrollTo({ top: 0, behavior: 'smooth' });
